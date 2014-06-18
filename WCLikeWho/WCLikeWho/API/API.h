@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 
 
+#define kGotStar @"kGotStar"
+
 @interface API : NSObject {
 @public
 }
 
 +(API*)getAPI;
+
+- (void)saveDictDataForKey:(id)key data:(NSDictionary*)data;
+- (NSDictionary*)loadDictDataForKey:(id)key;
+- (BOOL)isTimeToCanClick;
+- (void)gotStar;
+- (int)canClickTimeRemaining;
 
 @end

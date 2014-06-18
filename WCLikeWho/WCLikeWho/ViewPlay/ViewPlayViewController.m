@@ -8,6 +8,7 @@
 
 #import "ViewPlayViewController.h"
 #import "ViewShare.h"
+#import "API.h"
 
 @implementation ViewPlayViewController
 @synthesize mButton;
@@ -67,7 +68,22 @@
 
 
 -(IBAction) didClickStart:(id) sender {
-    [self start];
+    
+    API *a = [API getAPI];
+    if ([a isTimeToCanClick]) {
+        [self start];
+    } else {
+        int remainingTime = [a canClickTimeRemaining];
+        NSString *desc = [NSString stringWithFormat:@"You must wait for %d min.", remainingTime];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:desc
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+
 }
 
 
@@ -113,8 +129,11 @@
 }
 
 - (void)slotMachineDidEndSliding:(ZCSlotMachine *)slotMachine {
+    API *a = [API getAPI];
+    
     mButton.enabled = YES;
-    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
+    
+    [a gotStar];
     ViewShare *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewShare"];
     [self presentViewController:vc animated:YES completion:nil];
 }
