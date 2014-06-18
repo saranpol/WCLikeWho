@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="28" y="97"/>
         </scene>
-        <!--View Controller-->
+        <!--View Play View Controller-->
         <scene sceneID="NsL-mX-sfj">
             <objects>
-                <viewController id="r5q-s2-Euz" sceneMemberID="viewController">
+                <viewController id="r5q-s2-Euz" customClass="ViewPlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OAU-9X-MMq"/>
                         <viewControllerLayoutGuide type="bottom" id="SGZ-3u-Zpo"/>
@@ -87,19 +87,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJH-ec-TLp">
-                                <rect key="frame" x="54" y="468" width="195" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.76470588240000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.31764705879999999" green="0.54901960780000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Gg7-5G-qg4" kind="modal" id="rYh-SX-uva"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5o-Ig-gYh">
                                 <rect key="frame" x="0.0" y="514" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,15 +101,29 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ให้ทำอะไรสักอย่าง เช่นหมุนวงล้อ จับลูกปิงปอง" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="279" translatesAutoresizingMaskIntoConstraints="NO" id="28R-8U-ZBx">
-                                <rect key="frame" x="12" y="134" width="279" height="226"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bz8-gm-iCu" customClass="ZCSlotMachine">
+                                <rect key="frame" x="15" y="73" width="291" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uig-A3-B09">
+                                <rect key="frame" x="54" y="325" width="212" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start" backgroundImage="StartBtn_N.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="StartBtn_H.png"/>
+                                <connections>
+                                    <action selector="didClickStart:" destination="r5q-s2-Euz" eventType="touchUpInside" id="0cf-08-p0e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mButton" destination="Uig-A3-B09" id="sjV-l7-iJo"/>
+                        <outlet property="mSlotMachine" destination="bz8-gm-iCu" id="vOJ-PQ-WWY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlD-Ft-m1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,7 +132,7 @@
         <!--View Share-->
         <scene sceneID="ice-j3-Nxa">
             <objects>
-                <viewController id="Gg7-5G-qg4" customClass="ViewShare" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewShare" id="Gg7-5G-qg4" customClass="ViewShare" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0nn-15-Grq"/>
                         <viewControllerLayoutGuide type="bottom" id="uTn-T8-2J8"/>
@@ -194,6 +195,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="StartBtn_H.png" width="243" height="27"/>
+        <image name="StartBtn_N.png" width="243" height="27"/>
         <image name="neymar.jpg" width="640" height="640"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

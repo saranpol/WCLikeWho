@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033E18BB1951979600FEDA8D /* Batman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B31951979600FEDA8D /* Batman@2x.png */; };
+		033E18BC1951979600FEDA8D /* Doraemon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B41951979600FEDA8D /* Doraemon@2x.png */; };
+		033E18BD1951979600FEDA8D /* Mario@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B51951979600FEDA8D /* Mario@2x.png */; };
+		033E18BE1951979600FEDA8D /* Nobi Nobita@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B61951979600FEDA8D /* Nobi Nobita@2x.png */; };
+		033E18BF1951979600FEDA8D /* SlotMachineBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B71951979600FEDA8D /* SlotMachineBackground@2x.png */; };
+		033E18C01951979600FEDA8D /* SlotMachineCover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B81951979600FEDA8D /* SlotMachineCover@2x.png */; };
+		033E18C11951979600FEDA8D /* StartBtn_H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18B91951979600FEDA8D /* StartBtn_H@2x.png */; };
+		033E18C21951979600FEDA8D /* StartBtn_N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033E18BA1951979600FEDA8D /* StartBtn_N@2x.png */; };
+		033E18C6195199F300FEDA8D /* ViewPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18C5195199F300FEDA8D /* ViewPlayViewController.m */; };
+		033E18C819519A2A00FEDA8D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033E18C719519A2A00FEDA8D /* QuartzCore.framework */; };
+		033E18CD19519A8800FEDA8D /* ZCSlotMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */; };
+		033E18D11951B6CF00FEDA8D /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18D01951B6CF00FEDA8D /* API.m */; };
 		43B335621950BD5F000E7442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335611950BD5F000E7442 /* Foundation.framework */; };
 		43B335641950BD5F000E7442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335631950BD5F000E7442 /* CoreGraphics.framework */; };
 		43B335661950BD5F000E7442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335651950BD5F000E7442 /* UIKit.framework */; };
@@ -37,6 +49,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033E18B31951979600FEDA8D /* Batman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Batman@2x.png"; sourceTree = "<group>"; };
+		033E18B41951979600FEDA8D /* Doraemon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Doraemon@2x.png"; sourceTree = "<group>"; };
+		033E18B51951979600FEDA8D /* Mario@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mario@2x.png"; sourceTree = "<group>"; };
+		033E18B61951979600FEDA8D /* Nobi Nobita@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nobi Nobita@2x.png"; sourceTree = "<group>"; };
+		033E18B71951979600FEDA8D /* SlotMachineBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SlotMachineBackground@2x.png"; sourceTree = "<group>"; };
+		033E18B81951979600FEDA8D /* SlotMachineCover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SlotMachineCover@2x.png"; sourceTree = "<group>"; };
+		033E18B91951979600FEDA8D /* StartBtn_H@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StartBtn_H@2x.png"; sourceTree = "<group>"; };
+		033E18BA1951979600FEDA8D /* StartBtn_N@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StartBtn_N@2x.png"; sourceTree = "<group>"; };
+		033E18C4195199F300FEDA8D /* ViewPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlayViewController.h; sourceTree = "<group>"; };
+		033E18C5195199F300FEDA8D /* ViewPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPlayViewController.m; sourceTree = "<group>"; };
+		033E18C719519A2A00FEDA8D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		033E18CB19519A8800FEDA8D /* ZCSlotMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSlotMachine.h; sourceTree = "<group>"; };
+		033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSlotMachine.m; sourceTree = "<group>"; };
+		033E18CF1951B6CF00FEDA8D /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		033E18D01951B6CF00FEDA8D /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		43B3355E1950BD5F000E7442 /* WCLikeWho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCLikeWho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B335611950BD5F000E7442 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43B335631950BD5F000E7442 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033E18C819519A2A00FEDA8D /* QuartzCore.framework in Frameworks */,
 				43B335641950BD5F000E7442 /* CoreGraphics.framework in Frameworks */,
 				43B335661950BD5F000E7442 /* UIKit.framework in Frameworks */,
 				43B335621950BD5F000E7442 /* Foundation.framework in Frameworks */,
@@ -86,6 +114,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033E18C31951998500FEDA8D /* ViewPlay */ = {
+			isa = PBXGroup;
+			children = (
+				033E18C4195199F300FEDA8D /* ViewPlayViewController.h */,
+				033E18C5195199F300FEDA8D /* ViewPlayViewController.m */,
+			);
+			path = ViewPlay;
+			sourceTree = "<group>";
+		};
+		033E18C919519A8800FEDA8D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				033E18CA19519A8800FEDA8D /* ZCSlotMachine */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		033E18CA19519A8800FEDA8D /* ZCSlotMachine */ = {
+			isa = PBXGroup;
+			children = (
+				033E18CB19519A8800FEDA8D /* ZCSlotMachine.h */,
+				033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */,
+			);
+			path = ZCSlotMachine;
+			sourceTree = "<group>";
+		};
+		033E18CE1951B6CF00FEDA8D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				033E18CF1951B6CF00FEDA8D /* API.h */,
+				033E18D01951B6CF00FEDA8D /* API.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		43B335551950BD5F000E7442 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +171,7 @@
 		43B335601950BD5F000E7442 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				033E18C719519A2A00FEDA8D /* QuartzCore.framework */,
 				43B335611950BD5F000E7442 /* Foundation.framework */,
 				43B335631950BD5F000E7442 /* CoreGraphics.framework */,
 				43B335651950BD5F000E7442 /* UIKit.framework */,
@@ -119,10 +183,13 @@
 		43B335671950BD5F000E7442 /* WCLikeWho */ = {
 			isa = PBXGroup;
 			children = (
+				033E18C919519A8800FEDA8D /* libs */,
 				43B335991950BF16000E7442 /* Images */,
 				43B335731950BD5F000E7442 /* Main_iPhone.storyboard */,
 				43B335761950BD5F000E7442 /* Main_iPad.storyboard */,
 				43B3359C1950C1EA000E7442 /* ViewShare */,
+				033E18C31951998500FEDA8D /* ViewPlay */,
+				033E18CE1951B6CF00FEDA8D /* API */,
 				43B335701950BD5F000E7442 /* WCAppDelegate.h */,
 				43B335711950BD5F000E7442 /* WCAppDelegate.m */,
 				43B335791950BD5F000E7442 /* WCViewController.h */,
@@ -166,6 +233,14 @@
 			isa = PBXGroup;
 			children = (
 				43B3359A1950BF16000E7442 /* neymar.jpg */,
+				033E18B31951979600FEDA8D /* Batman@2x.png */,
+				033E18B41951979600FEDA8D /* Doraemon@2x.png */,
+				033E18B51951979600FEDA8D /* Mario@2x.png */,
+				033E18B61951979600FEDA8D /* Nobi Nobita@2x.png */,
+				033E18B71951979600FEDA8D /* SlotMachineBackground@2x.png */,
+				033E18B81951979600FEDA8D /* SlotMachineCover@2x.png */,
+				033E18B91951979600FEDA8D /* StartBtn_H@2x.png */,
+				033E18BA1951979600FEDA8D /* StartBtn_N@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -257,10 +332,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				43B335781950BD5F000E7442 /* Main_iPad.storyboard in Resources */,
+				033E18BD1951979600FEDA8D /* Mario@2x.png in Resources */,
+				033E18BE1951979600FEDA8D /* Nobi Nobita@2x.png in Resources */,
 				43B3357D1950BD5F000E7442 /* Images.xcassets in Resources */,
 				43B335751950BD5F000E7442 /* Main_iPhone.storyboard in Resources */,
+				033E18C01951979600FEDA8D /* SlotMachineCover@2x.png in Resources */,
 				43B3356C1950BD5F000E7442 /* InfoPlist.strings in Resources */,
+				033E18C11951979600FEDA8D /* StartBtn_H@2x.png in Resources */,
+				033E18BC1951979600FEDA8D /* Doraemon@2x.png in Resources */,
+				033E18C21951979600FEDA8D /* StartBtn_N@2x.png in Resources */,
 				43B3359B1950BF16000E7442 /* neymar.jpg in Resources */,
+				033E18BF1951979600FEDA8D /* SlotMachineBackground@2x.png in Resources */,
+				033E18BB1951979600FEDA8D /* Batman@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,9 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033E18C6195199F300FEDA8D /* ViewPlayViewController.m in Sources */,
 				43B3359F1950C201000E7442 /* ViewShare.m in Sources */,
+				033E18CD19519A8800FEDA8D /* ZCSlotMachine.m in Sources */,
 				43B3357B1950BD5F000E7442 /* WCViewController.m in Sources */,
 				43B335721950BD5F000E7442 /* WCAppDelegate.m in Sources */,
+				033E18D11951B6CF00FEDA8D /* API.m in Sources */,
 				43B3356E1950BD5F000E7442 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +583,7 @@
 				43B335951950BD60000E7442 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43B335961950BD60000E7442 /* Build configuration list for PBXNativeTarget "WCLikeWhoTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +592,7 @@
 				43B335981950BD60000E7442 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
