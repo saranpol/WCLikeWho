@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GADBannerViewDelegate.h"
 
-@interface WCViewController : UIViewController
+@class GADBannerView;
+@class GADRequest;
+
+@interface WCViewController : UIViewController <GADBannerViewDelegate> {
+@public
+    
+}
+
+
+@property (nonatomic, weak) IBOutlet UILabel *mLabelGender;
+
+@property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
+@property (nonatomic, strong) GADBannerView *mAdBanner;
+
+- (GADRequest *)request;
 
 @end

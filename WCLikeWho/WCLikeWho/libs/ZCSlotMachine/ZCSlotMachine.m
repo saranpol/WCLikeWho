@@ -202,7 +202,9 @@ static const NSUInteger kMinTurn = 3;
                 
                 iconImageLayer.contents = (id)iconImage.CGImage;
                 iconImageLayer.contentsScale = iconImage.scale;
-                iconImageLayer.contentsGravity = kCAGravityCenter;
+                
+                // mod hack
+                // iconImageLayer.contentsGravity = kCAGravityCenter;
 #if SHOW_BORDER
                 iconImageLayer.borderColor = [UIColor redColor].CGColor;
                 iconImageLayer.borderWidth = 1;

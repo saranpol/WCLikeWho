@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ZCSlotMachine.h"
+#import "GADBannerViewDelegate.h"
 
-@interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate> {
+@class GADBannerView;
+@class GADRequest;
+
+@interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate, GADBannerViewDelegate> {
 @public
     
 }
@@ -20,6 +24,11 @@
 
 @property (nonatomic, strong) NSArray *mSlotIcons;
 
+
+@property (nonatomic, weak) IBOutlet UILabel *mLabelCaption;
+@property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
+@property (nonatomic, strong) GADBannerView *mAdBanner;
+- (GADRequest *)request;
 
 -(IBAction) didClickStart:(id) sender;
 

@@ -9,11 +9,20 @@
 #import "ViewPlayViewController.h"
 #import "ViewShare.h"
 #import "API.h"
+#import "WCAppDelegate.h"
+#import "WCViewController.h"
+#import "GADBannerView.h"
+#import "GADRequest.h"
+#import "API.h"
+
 
 @implementation ViewPlayViewController
 @synthesize mButton;
 @synthesize mSlotMachine;
 @synthesize mSlotIcons;
+@synthesize mViewAdParent;
+@synthesize mLabelCaption;
+@synthesize mAdBanner;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,7 +37,15 @@
     self = [super initWithCoder:coder];
     if (self) {
         mSlotIcons = [NSArray arrayWithObjects:
-                      [UIImage imageNamed:@"Doraemon"], [UIImage imageNamed:@"Mario"], [UIImage imageNamed:@"Nobi Nobita"], [UIImage imageNamed:@"Batman"], nil];
+                      [UIImage imageNamed:@"Algeria"], [UIImage imageNamed:@"Argentina"], [UIImage imageNamed:@"Australia"], [UIImage imageNamed:@"Belgium"]
+                      , [UIImage imageNamed:@"Bosnia-And-Herzegovina"], [UIImage imageNamed:@"Brazil"], [UIImage imageNamed:@"Cameroon"]
+                      ,[UIImage imageNamed:@"Chile"], [UIImage imageNamed:@"Colombia"], [UIImage imageNamed:@"Costa-Rica"] ,[UIImage imageNamed:@"Côte-D'ivoire"]
+                      , [UIImage imageNamed:@"Croatia"], [UIImage imageNamed:@"Ecuador"], [UIImage imageNamed:@"England"], [UIImage imageNamed:@"France"]
+                      , [UIImage imageNamed:@"Germany"], [UIImage imageNamed:@"Ghana"], [UIImage imageNamed:@"Greece"], [UIImage imageNamed:@"Honduras"]
+                      , [UIImage imageNamed:@"Iran"], [UIImage imageNamed:@"Italy"], [UIImage imageNamed:@"Japan"], [UIImage imageNamed:@"Korea-Republic"]
+                      , [UIImage imageNamed:@"Mexico"], [UIImage imageNamed:@"Netherlands"], [UIImage imageNamed:@"Nigeria"], [UIImage imageNamed:@"Portugal"]
+                      ,[UIImage imageNamed:@"Russia"], [UIImage imageNamed:@"Spain"], [UIImage imageNamed:@"Switzerland"], [UIImage imageNamed:@"Uruguay"]
+                      , [UIImage imageNamed:@"Usa"], nil];
     }
     return self;
 }
@@ -38,15 +55,46 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    mSlotMachine.contentInset = UIEdgeInsetsMake(5, 8, 5, 8);
-    mSlotMachine.backgroundImage = [UIImage imageNamed:@"SlotMachineBackground"];
-    mSlotMachine.coverImage = [UIImage imageNamed:@"SlotMachineCover"];
+    mSlotMachine.contentInset = UIEdgeInsetsMake(5, 18, 5, 8);
+    mSlotMachine.backgroundImage = [UIImage imageNamed:@"role"];
+    mSlotMachine.coverImage = [UIImage imageNamed:@"mask"];
     
     mSlotMachine.delegate = self;
     mSlotMachine.dataSource = self;
 
     
+    // Admob
+    CGPoint origin = CGPointMake(0.0f, 0.0f);
+    
+    // Use predefined GADAdSize constants to define the GADBannerView.
+    self.mAdBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin];
+    
+    // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
+    self.mAdBanner.adUnitID = kSampleAdUnitID;
+    self.mAdBanner.delegate = self;
+    self.mAdBanner.rootViewController = self;
+    [mViewAdParent addSubview:self.mAdBanner];
+    [self.mAdBanner loadRequest:[self request]];
+    
+    
+    [mLabelCaption setFont:[UIFont fontWithName:FONT_1 size:mLabelCaption.font.pointSize]];
 
+    
+    NSUInteger slotIconCount = [mSlotIcons count];
+    
+    NSUInteger slotOneIndex = abs(rand() % slotIconCount);
+    NSUInteger slotTwoIndex = abs(rand() % slotIconCount);
+    NSUInteger slotThreeIndex = abs(rand() % slotIconCount);
+    NSUInteger slotFourIndex = abs(rand() % slotIconCount);
+    
+    
+    mSlotMachine.slotResults = [NSArray arrayWithObjects:
+                                [NSNumber numberWithInteger:slotOneIndex],
+                                [NSNumber numberWithInteger:slotTwoIndex],
+                                [NSNumber numberWithInteger:slotThreeIndex],
+                                [NSNumber numberWithInteger:slotFourIndex],
+                                nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +102,38 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+#pragma mark GADRequest generation
+
+- (GADRequest *)request {
+    GADRequest *request = [GADRequest request];
+    
+    // Make the request for a test ad. Put in an identifier for the simulator as well as any devices
+    // you want to receive test ads.
+    request.testDevices = @[
+                            // TODO: Add your device/simulator test identifiers here. Your device identifier is printed to
+                            // the console when the app is launched.
+                            GAD_SIMULATOR_ID
+                            ];
+    return request;
+}
+
+#pragma mark GADBannerViewDelegate implementation
+
+// We've received an ad successfully.
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+    NSLog(@"Received ad successfully");
+}
+
+- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -68,6 +148,16 @@
 
 
 -(IBAction) didClickStart:(id) sender {
+
+    
+    [self start];
+    
+    return;
+    
+    WCAppDelegate *core = [WCAppDelegate core];
+    [core openSessionWithAllowLoginUI:YES];
+    
+    return;
     
     API *a = [API getAPI];
     if ([a isTimeToCanClick]) {
@@ -149,11 +239,11 @@
 }
 
 - (CGFloat)slotWidthInSlotMachine:(ZCSlotMachine *)slotMachine {
-    return 65.0f;
+    return 60.0f;
 }
 
 - (CGFloat)slotSpacingInSlotMachine:(ZCSlotMachine *)slotMachine {
-    return 5.0f;
+    return 14;
 }
 
 @end

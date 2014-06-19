@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface WCAppDelegate : UIResponder <UIApplicationDelegate>
+@class WCViewController;
+
+@interface WCAppDelegate : UIResponder <UIApplicationDelegate> {
+@public
+    
+}
+
++ (WCAppDelegate *)core;
++ (WCViewController *)vc;
+
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) WCViewController *viewController;
+
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 
 @end
