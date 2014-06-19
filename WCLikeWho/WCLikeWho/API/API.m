@@ -51,7 +51,6 @@ static API *instance;
     NSMutableDictionary *saveDict = [NSMutableDictionary new];
     [saveDict setObject:now forKey:@"date"];
     [self saveDictDataForKey:kGotStar data:saveDict];
-    NSLog(@"now = %@", now);
 }
 
 

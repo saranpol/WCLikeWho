@@ -19,6 +19,7 @@
 		033E18C819519A2A00FEDA8D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033E18C719519A2A00FEDA8D /* QuartzCore.framework */; };
 		033E18CD19519A8800FEDA8D /* ZCSlotMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */; };
 		033E18D11951B6CF00FEDA8D /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18D01951B6CF00FEDA8D /* API.m */; };
+		0365E0C91952A9CE00A52E8F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */; };
 		43B335621950BD5F000E7442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335611950BD5F000E7442 /* Foundation.framework */; };
 		43B335641950BD5F000E7442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335631950BD5F000E7442 /* CoreGraphics.framework */; };
 		43B335661950BD5F000E7442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335651950BD5F000E7442 /* UIKit.framework */; };
@@ -64,6 +65,7 @@
 		033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSlotMachine.m; sourceTree = "<group>"; };
 		033E18CF1951B6CF00FEDA8D /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		033E18D01951B6CF00FEDA8D /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		43B3355E1950BD5F000E7442 /* WCLikeWho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCLikeWho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B335611950BD5F000E7442 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43B335631950BD5F000E7442 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033E18C819519A2A00FEDA8D /* QuartzCore.framework in Frameworks */,
+				0365E0C91952A9CE00A52E8F /* FacebookSDK.framework in Frameworks */,
 				43B335641950BD5F000E7442 /* CoreGraphics.framework in Frameworks */,
 				43B335661950BD5F000E7442 /* UIKit.framework in Frameworks */,
 				43B335621950BD5F000E7442 /* Foundation.framework in Frameworks */,
@@ -126,6 +129,7 @@
 		033E18C919519A8800FEDA8D /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0365E0C71952A9CE00A52E8F /* FacebookSDK */,
 				033E18CA19519A8800FEDA8D /* ZCSlotMachine */,
 			);
 			path = libs;
@@ -147,6 +151,14 @@
 				033E18D01951B6CF00FEDA8D /* API.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0365E0C71952A9CE00A52E8F /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */,
+			);
+			path = FacebookSDK;
 			sourceTree = "<group>";
 		};
 		43B335551950BD5F000E7442 = {
@@ -503,6 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WCLikeWho/libs/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
@@ -516,6 +532,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WCLikeWho/libs/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
