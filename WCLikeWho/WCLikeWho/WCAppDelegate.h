@@ -11,6 +11,14 @@
 
 @class WCViewController;
 
+
+@protocol FacebookLoginDelegate <NSObject>
+@optional
+- (void)facebookLoginSuccess:(FBSession*)session;
+- (void)facebookLoginFail:(FBSession*)session errors:(NSError*)errors;
+@end
+
+
 @interface WCAppDelegate : UIResponder <UIApplicationDelegate> {
 @public
     
@@ -22,6 +30,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) WCViewController *viewController;
+
+@property (strong, nonatomic) id<FacebookLoginDelegate> mDelegate;
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 

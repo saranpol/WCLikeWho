@@ -7,9 +7,17 @@
 //
 
 #import "ViewShare.h"
-
+#import "API.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation ViewShare
+@synthesize mLabelName;
+@synthesize mLabelWCWhoLike;
+@synthesize mLabelYouLike;
+@synthesize mBtnClose;
+@synthesize mBtnFBShare;
+@synthesize mBtnNormalShare;
+@synthesize mViewContent;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,7 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    
+    [mLabelName setFont:[UIFont fontWithName:FONT_1 size:mLabelName.font.pointSize]];
+    [mLabelWCWhoLike setFont:[UIFont fontWithName:FONT_1 size:mLabelWCWhoLike.font.pointSize]];
+    [mLabelYouLike setFont:[UIFont fontWithName:FONT_1 size:mLabelYouLike.font.pointSize]];
+    
+    [mBtnNormalShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnNormalShare.titleLabel.font.pointSize]];
+    [mBtnFBShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnFBShare.titleLabel.font.pointSize]];
+    [mBtnClose.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnClose.titleLabel.font.pointSize]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,9 +58,58 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)shareFacebook {
+    NSLog(@"share facebook");
+}
+
+
+- (UIImage*)saveImage {
+    UIImage* image;
+    UIGraphicsBeginImageContextWithOptions(mViewContent.bounds.size, self.view.opaque, 0.0);
+    [mViewContent.layer renderInContext:UIGraphicsGetCurrentContext()];
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 - (IBAction)clickBack:(id)sender {
     [[[self presentingViewController] presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)clickNormalShare:(id)sender {
+    UIImage *image = [self saveImage];
+    
+    NSArray* dataToShare = @[image];  // ...or whatever pieces of data you want to share.
+    
+    UIActivityViewController* activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+                                      applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:^{
+        
+    }];
+}
+
+- (IBAction)clickFacebookShare:(id)sender {
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded)
+    {
+        [self shareFacebook];
+    } else {
+        WCAppDelegate *core = [WCAppDelegate core];
+        core.mDelegate = self;
+        [core openSessionWithAllowLoginUI:YES];
+    }
+    
+    
+}
+
+- (void)facebookLoginSuccess:(FBSession*)session {
+    [self shareFacebook];
+}
+
+- (void)facebookLoginFail:(FBSession*)session errors:(NSError*)errors {
+
+}
+
 
 @end

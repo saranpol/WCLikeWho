@@ -20,8 +20,8 @@
 
 
 // Fonts
-#define FONT_0 @"ContextRepriseLightSSiLight"
-#define FONT_1 @"ContextRepriseLightSSiExtraLight"
+#define FONT_1 @"ContextRepriseLightSSiLight"
+#define FONT_0 @"ContextRepriseLightSSiExtraLight"
 
 @interface API : NSObject {
 @public

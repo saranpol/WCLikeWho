@@ -20,6 +20,22 @@
 		033E18CD19519A8800FEDA8D /* ZCSlotMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18CC19519A8800FEDA8D /* ZCSlotMachine.m */; };
 		033E18D11951B6CF00FEDA8D /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E18D01951B6CF00FEDA8D /* API.m */; };
 		0365E0C91952A9CE00A52E8F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */; };
+		03744438195417F700690E53 /* bg_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744429195417F700690E53 /* bg_share.png */; };
+		03744439195417F700690E53 /* btn_brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442A195417F700690E53 /* btn_brown.png */; };
+		0374443A195417F700690E53 /* btn_brown_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442B195417F700690E53 /* btn_brown_press.png */; };
+		0374443B195417F700690E53 /* btn_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442C195417F700690E53 /* btn_facebook.png */; };
+		0374443C195417F700690E53 /* btn_facebook_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442D195417F700690E53 /* btn_facebook_press.png */; };
+		0374443D195417F700690E53 /* btn_white_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442E195417F700690E53 /* btn_white_small.png */; };
+		0374443E195417F700690E53 /* btn_white_small_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374442F195417F700690E53 /* btn_white_small_press.png */; };
+		0374443F195417F700690E53 /* bg_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744431195417F700690E53 /* bg_share@2x.png */; };
+		03744440195417F700690E53 /* btn_brown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744432195417F700690E53 /* btn_brown@2x.png */; };
+		03744441195417F700690E53 /* btn_brown_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744433195417F700690E53 /* btn_brown_press@2x.png */; };
+		03744442195417F700690E53 /* btn_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744434195417F700690E53 /* btn_facebook@2x.png */; };
+		03744443195417F700690E53 /* btn_facebook_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744435195417F700690E53 /* btn_facebook_press@2x.png */; };
+		03744444195417F700690E53 /* btn_white_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744436195417F700690E53 /* btn_white_small@2x.png */; };
+		03744445195417F700690E53 /* btn_white_small_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03744437195417F700690E53 /* btn_white_small_press@2x.png */; };
+		037444521954200D00690E53 /* Didier Drogba.png in Resources */ = {isa = PBXBuildFile; fileRef = 0374444F1954200D00690E53 /* Didier Drogba.png */; };
+		037444531954200D00690E53 /* Didier Drogba@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 037444511954200D00690E53 /* Didier Drogba@2x.png */; };
 		03BA281C1952D5F400A2EF82 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BA281A1952D5F400A2EF82 /* libGoogleAdMobAds.a */; };
 		03BA281D1952D5F400A2EF82 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03BA281B1952D5F400A2EF82 /* README.txt */; };
 		03BA281F1952D63100A2EF82 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BA281E1952D63100A2EF82 /* AdSupport.framework */; };
@@ -127,6 +143,22 @@
 		033E18CF1951B6CF00FEDA8D /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		033E18D01951B6CF00FEDA8D /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		03744429195417F700690E53 /* bg_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_share.png; sourceTree = "<group>"; };
+		0374442A195417F700690E53 /* btn_brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_brown.png; sourceTree = "<group>"; };
+		0374442B195417F700690E53 /* btn_brown_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_brown_press.png; sourceTree = "<group>"; };
+		0374442C195417F700690E53 /* btn_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_facebook.png; sourceTree = "<group>"; };
+		0374442D195417F700690E53 /* btn_facebook_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_facebook_press.png; sourceTree = "<group>"; };
+		0374442E195417F700690E53 /* btn_white_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_white_small.png; sourceTree = "<group>"; };
+		0374442F195417F700690E53 /* btn_white_small_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_white_small_press.png; sourceTree = "<group>"; };
+		03744431195417F700690E53 /* bg_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_share@2x.png"; sourceTree = "<group>"; };
+		03744432195417F700690E53 /* btn_brown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_brown@2x.png"; sourceTree = "<group>"; };
+		03744433195417F700690E53 /* btn_brown_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_brown_press@2x.png"; sourceTree = "<group>"; };
+		03744434195417F700690E53 /* btn_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_facebook@2x.png"; sourceTree = "<group>"; };
+		03744435195417F700690E53 /* btn_facebook_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_facebook_press@2x.png"; sourceTree = "<group>"; };
+		03744436195417F700690E53 /* btn_white_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_white_small@2x.png"; sourceTree = "<group>"; };
+		03744437195417F700690E53 /* btn_white_small_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_white_small_press@2x.png"; sourceTree = "<group>"; };
+		0374444F1954200D00690E53 /* Didier Drogba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Didier Drogba.png"; sourceTree = "<group>"; };
+		037444511954200D00690E53 /* Didier Drogba@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Didier Drogba@2x.png"; sourceTree = "<group>"; };
 		03BA280E1952D5F400A2EF82 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		03BA280F1952D5F400A2EF82 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		03BA28101952D5F400A2EF82 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -302,6 +334,68 @@
 				0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */,
 			);
 			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		03744427195417F700690E53 /* SharePage */ = {
+			isa = PBXGroup;
+			children = (
+				03744428195417F700690E53 /* 1x */,
+				03744430195417F700690E53 /* 2x */,
+			);
+			path = SharePage;
+			sourceTree = "<group>";
+		};
+		03744428195417F700690E53 /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				03744429195417F700690E53 /* bg_share.png */,
+				0374442A195417F700690E53 /* btn_brown.png */,
+				0374442B195417F700690E53 /* btn_brown_press.png */,
+				0374442C195417F700690E53 /* btn_facebook.png */,
+				0374442D195417F700690E53 /* btn_facebook_press.png */,
+				0374442E195417F700690E53 /* btn_white_small.png */,
+				0374442F195417F700690E53 /* btn_white_small_press.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		03744430195417F700690E53 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				03744431195417F700690E53 /* bg_share@2x.png */,
+				03744432195417F700690E53 /* btn_brown@2x.png */,
+				03744433195417F700690E53 /* btn_brown_press@2x.png */,
+				03744434195417F700690E53 /* btn_facebook@2x.png */,
+				03744435195417F700690E53 /* btn_facebook_press@2x.png */,
+				03744436195417F700690E53 /* btn_white_small@2x.png */,
+				03744437195417F700690E53 /* btn_white_small_press@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		0374444D1954200D00690E53 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				0374444E1954200D00690E53 /* 1x */,
+				037444501954200D00690E53 /* 2x */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		0374444E1954200D00690E53 /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				0374444F1954200D00690E53 /* Didier Drogba.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		037444501954200D00690E53 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				037444511954200D00690E53 /* Didier Drogba@2x.png */,
+			);
+			path = 2x;
 			sourceTree = "<group>";
 		};
 		03BA280D1952D5F400A2EF82 /* GoogleMobileAdsSdkiOS-6.9.2 */ = {
@@ -528,6 +622,8 @@
 		43B335991950BF16000E7442 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0374444D1954200D00690E53 /* Player */,
+				03744427195417F700690E53 /* SharePage */,
 				03BA28DF19530EF900A2EF82 /* Flags */,
 				03BA2844195308DF00A2EF82 /* SlotPage */,
 				03BA28311952F99400A2EF82 /* MainPage */,
@@ -630,19 +726,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0374443B195417F700690E53 /* btn_facebook.png in Resources */,
 				03BA2856195308DF00A2EF82 /* btn_back@2x.png in Resources */,
+				0374443D195417F700690E53 /* btn_white_small.png in Resources */,
 				43B335781950BD5F000E7442 /* Main_iPad.storyboard in Resources */,
 				033E18BD1951979600FEDA8D /* Mario@2x.png in Resources */,
 				03BA2858195308DF00A2EF82 /* btn_white_press@2x.png in Resources */,
 				03BA290C19530EF900A2EF82 /* Ecuador.png in Resources */,
+				03744443195417F700690E53 /* btn_facebook_press@2x.png in Resources */,
 				03BA290619530EF900A2EF82 /* Cameroon.png in Resources */,
 				033E18BE1951979600FEDA8D /* Nobi Nobita@2x.png in Resources */,
 				03BA291819530EF900A2EF82 /* Netherlands.png in Resources */,
 				03BA28431952F99400A2EF82 /* btn_male_pressed@2x.png in Resources */,
 				03BA283E1952F99400A2EF82 /* btn_male_normal.png in Resources */,
 				43B3357D1950BD5F000E7442 /* Images.xcassets in Resources */,
+				0374443E195417F700690E53 /* btn_white_small_press.png in Resources */,
 				03BA283C1952F99400A2EF82 /* btn_female_normal.png in Resources */,
 				03BA2854195308DF00A2EF82 /* mask.png in Resources */,
+				03744445195417F700690E53 /* btn_white_small_press@2x.png in Resources */,
 				03BA28411952F99400A2EF82 /* btn_female_pressed@2x.png in Resources */,
 				03BA290E19530EF900A2EF82 /* France.png in Resources */,
 				03BA291019530EF900A2EF82 /* Ghana.png in Resources */,
@@ -657,22 +758,30 @@
 				43B3356C1950BD5F000E7442 /* InfoPlist.strings in Resources */,
 				033E18C11951979600FEDA8D /* StartBtn_H@2x.png in Resources */,
 				03BA291D19530EF900A2EF82 /* Switzerland.png in Resources */,
+				03744442195417F700690E53 /* btn_facebook@2x.png in Resources */,
 				033E18BC1951979600FEDA8D /* Doraemon@2x.png in Resources */,
 				03BA283D1952F99400A2EF82 /* btn_female_pressed.png in Resources */,
 				033E18C21951979600FEDA8D /* StartBtn_N@2x.png in Resources */,
+				03744438195417F700690E53 /* bg_share.png in Resources */,
 				03BA291319530EF900A2EF82 /* Iran.png in Resources */,
 				03BA28401952F99400A2EF82 /* btn_female_normal@2x.png in Resources */,
 				43B3359B1950BF16000E7442 /* neymar.jpg in Resources */,
 				03BA291F19530EF900A2EF82 /* Usa.png in Resources */,
 				03BA291619530EF900A2EF82 /* Korea-Republic.png in Resources */,
+				0374443F195417F700690E53 /* bg_share@2x.png in Resources */,
 				03BA291119530EF900A2EF82 /* Greece.png in Resources */,
 				03BA2853195308DF00A2EF82 /* btn_white_press.png in Resources */,
 				03BA290519530EF900A2EF82 /* Brazil.png in Resources */,
 				03BA291719530EF900A2EF82 /* Mexico.png in Resources */,
 				03BA290919530EF900A2EF82 /* Costa-Rica.png in Resources */,
 				03BA291919530EF900A2EF82 /* Nigeria.png in Resources */,
+				03744440195417F700690E53 /* btn_brown@2x.png in Resources */,
 				03BA290319530EF900A2EF82 /* Belgium.png in Resources */,
+				03744439195417F700690E53 /* btn_brown.png in Resources */,
+				037444521954200D00690E53 /* Didier Drogba.png in Resources */,
 				03BA290219530EF900A2EF82 /* Australia.png in Resources */,
+				0374443A195417F700690E53 /* btn_brown_press.png in Resources */,
+				037444531954200D00690E53 /* Didier Drogba@2x.png in Resources */,
 				03BA28421952F99400A2EF82 /* btn_male_normal@2x.png in Resources */,
 				03BA290819530EF900A2EF82 /* Colombia.png in Resources */,
 				03BA290A19530EF900A2EF82 /* Côte-D'ivoire.png in Resources */,
@@ -684,6 +793,7 @@
 				03BA290F19530EF900A2EF82 /* Germany.png in Resources */,
 				03BA2859195308DF00A2EF82 /* mask@2x.png in Resources */,
 				03BA290D19530EF900A2EF82 /* England.png in Resources */,
+				0374443C195417F700690E53 /* btn_facebook_press.png in Resources */,
 				03BA285A195308DF00A2EF82 /* role@2x.png in Resources */,
 				03BA281D1952D5F400A2EF82 /* README.txt in Resources */,
 				03BA283F1952F99400A2EF82 /* btn_male_pressed.png in Resources */,
@@ -691,9 +801,11 @@
 				03BA291B19530EF900A2EF82 /* Russia.png in Resources */,
 				03BA291A19530EF900A2EF82 /* Portugal.png in Resources */,
 				03BA2852195308DF00A2EF82 /* btn_white.png in Resources */,
+				03744441195417F700690E53 /* btn_brown_press@2x.png in Resources */,
 				03BA291419530EF900A2EF82 /* Italy.png in Resources */,
 				03BA290119530EF900A2EF82 /* Argentina.png in Resources */,
 				033E18BB1951979600FEDA8D /* Batman@2x.png in Resources */,
+				03744444195417F700690E53 /* btn_white_small@2x.png in Resources */,
 				03BA291519530EF900A2EF82 /* Japan.png in Resources */,
 				03BA2857195308DF00A2EF82 /* btn_white@2x.png in Resources */,
 			);

@@ -58,9 +58,9 @@
     mSlotMachine.contentInset = UIEdgeInsetsMake(5, 18, 5, 8);
     mSlotMachine.backgroundImage = [UIImage imageNamed:@"role"];
     mSlotMachine.coverImage = [UIImage imageNamed:@"mask"];
-    
     mSlotMachine.delegate = self;
     mSlotMachine.dataSource = self;
+
 
     
     // Admob
@@ -80,21 +80,16 @@
     [mLabelCaption setFont:[UIFont fontWithName:FONT_1 size:mLabelCaption.font.pointSize]];
 
     
-    NSUInteger slotIconCount = [mSlotIcons count];
+//    mSlotMachine.singleUnitDuration = 0.0f;
+//    [self start];
+      mSlotMachine.singleUnitDuration = 0.07f;
     
-    NSUInteger slotOneIndex = abs(rand() % slotIconCount);
-    NSUInteger slotTwoIndex = abs(rand() % slotIconCount);
-    NSUInteger slotThreeIndex = abs(rand() % slotIconCount);
-    NSUInteger slotFourIndex = abs(rand() % slotIconCount);
+    [mButton.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mButton.titleLabel.font.pointSize]];
     
     
-    mSlotMachine.slotResults = [NSArray arrayWithObjects:
-                                [NSNumber numberWithInteger:slotOneIndex],
-                                [NSNumber numberWithInteger:slotTwoIndex],
-                                [NSNumber numberWithInteger:slotThreeIndex],
-                                [NSNumber numberWithInteger:slotFourIndex],
-                                nil];
     
+//    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,6 +171,10 @@
 
 }
 
+-(IBAction)didClickBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 #pragma mark - UIResponder
 
@@ -187,7 +186,7 @@
     NSUInteger slotThreeIndex = abs(rand() % slotIconCount);
     NSUInteger slotFourIndex = abs(rand() % slotIconCount);
     
-    NSLog(@"%d , %d, %d, %d", (int)slotOneIndex, (int)slotTwoIndex, (int)slotThreeIndex, (int)slotFourIndex);
+    // NSLog(@"%d , %d, %d, %d", (int)slotOneIndex, (int)slotTwoIndex, (int)slotThreeIndex, (int)slotFourIndex);
     
     mSlotMachine.slotResults = [NSArray arrayWithObjects:
                                 [NSNumber numberWithInteger:slotOneIndex],

@@ -10,7 +10,7 @@
 #import "WCViewController.h"
 
 @implementation WCAppDelegate
-
+@synthesize mDelegate;
 
 + (WCAppDelegate *)core {
     return (WCAppDelegate *) [UIApplication sharedApplication].delegate;
@@ -26,9 +26,6 @@
     // Override point for customization after application launch.
     
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-    
-    
-        NSLog(@"sdfsdf");
         // If there's one, just open the session silently, without showing the user the login UI
 //        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
 //                                           allowLoginUI:NO
@@ -49,17 +46,40 @@
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
 
-    return [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-                                       allowLoginUI:allowLoginUI
-                                  completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                      // Handler for session state changes
-                                      // This method will be called EACH time the session state changes,
-                                      // also for intermediate states and NOT just when the session open
-                                      [self sessionStateChanged:session state:state error:error];
-                                  }];
-    
+    NSArray *permissions = [NSArray arrayWithObjects:@"email", @"user_likes", nil];
+    return [FBSession openActiveSessionWithReadPermissions:permissions
+                                              allowLoginUI:allowLoginUI
+                                         completionHandler:^(FBSession *session,
+                                                             FBSessionState status,
+                                                             NSError *error) {
+                                             [self sessionStateChanged:session
+                                                                 state:status
+                                                                 error:error];
+                                             
+                                         }];
 }
 
+
+- (BOOL)activeSessionHasPermissions:(NSArray *)permissions
+{
+    __block BOOL hasPermissions = YES;
+    for (NSString *permission in permissions)
+    {
+        NSInteger index = [[FBSession activeSession].permissions indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            if ([obj isEqualToString:permission])
+            {
+                *stop = YES;
+            }
+            return *stop;
+        }];
+        
+        if (index == NSNotFound)
+        {
+            hasPermissions = NO;
+        }
+    }
+    return hasPermissions;
+}
 
 
 // This method will handle ALL the session state changes in the app
@@ -67,9 +87,94 @@
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
-        NSLog(@"Session opened");
+        // NSLog(@"Session opened");
         // Show the user the logged-in UI
-        //[self userLoggedIn];
+        // [self userLoggedIn];
+        
+        NSLog(@"FBSessionStateOpen");
+        
+        
+        // Check for publish permissions
+        [FBRequestConnection startWithGraphPath:@"/me/permissions"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  if (!error){
+                                      NSDictionary *permissions= [(NSArray *)[result data] objectAtIndex:0];
+                                      if (![permissions objectForKey:@"publish_actions"]){
+                                          // Publish permissions not found, ask for publish_actions
+                                         
+                                          [FBSession.activeSession requestNewPublishPermissions:[NSArray arrayWithObject:@"publish_actions"]
+                                                                                defaultAudience:FBSessionDefaultAudienceFriends
+                                                                              completionHandler:^(FBSession *session, NSError *error) {
+                                                                                  __block NSString *alertText;
+                                                                                  __block NSString *alertTitle;
+                                                                                  if (!error) {
+                                                                                      if ([FBSession.activeSession.permissions
+                                                                                           indexOfObject:@"publish_actions"] == NSNotFound){
+                                                                                          // Permission not granted, tell the user we will not publish
+                                                                                          alertTitle = @"Permission not granted";
+                                                                                          alertText = @"Your action will not be published to Facebook.";
+                                                                                          [[[UIAlertView alloc] initWithTitle:alertTitle
+                                                                                                                      message:alertText
+                                                                                                                     delegate:self
+                                                                                                            cancelButtonTitle:@"OK!"
+                                                                                                            otherButtonTitles:nil] show];
+                                                                                      } else {
+                                                                                          // Permission granted, publish the OG story
+                                                                                          [mDelegate facebookLoginSuccess:session];
+                                                                                      }
+                                                                                      
+                                                                                  } else {
+                                                                                      // There was an error, handle it
+                                                                                      // See https://developers.facebook.com/docs/ios/errors/
+                                                                                  }
+                                                                              }];
+                                          
+                                      } else {
+                                          // Publish permissions found, publish the OG story
+                                          
+                                      }
+                                      
+                                  } else {
+                                      // There was an error, handle it
+                                      // See https://developers.facebook.com/docs/ios/errors/
+                                  }
+                              }];
+        
+        
+        
+//        if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
+//            // permission does not exist
+//            NSLog(@"not have publish_actions");
+//            
+//            NSArray *publishPermission = [NSArray arrayWithObjects:@"publish_actions", nil];
+//            [session requestNewPublishPermissions:publishPermission
+//                                  defaultAudience:FBSessionDefaultAudienceEveryone
+//                                completionHandler:^(FBSession *session, NSError *error) {
+//                                    if (!error) {
+//                                        NSLog(@" requestNewPublishPermissions !!!!");
+//                                        [mDelegate facebookLoginSuccess:session];
+//                                    } else {
+//                                        NSLog(@"%@", [error localizedFailureReason]);
+//                                        [FBSession.activeSession closeAndClearTokenInformation];
+//                                    }
+//                                }];
+//
+//            
+//            
+////            [mDelegate facebookLoginSuccess:session];
+////            NSArray *publishPermission = [NSArray arrayWithObjects:@"publish_actions", nil];
+////            [[FBSession activeSession] requestNewPublishPermissions:publishPermission
+////                                  defaultAudience:FBSessionDefaultAudienceEveryone
+////                                completionHandler:^(FBSession *session, NSError *error) {
+////                                    if (!error) {
+////                                        //[self sessionStateChanged:session state:FBSessionStateOpen error:error];
+////                                    }
+////                                }];
+//        } else {
+//            [mDelegate facebookLoginSuccess:session];
+//            self.mDelegate = nil;
+//        }
+        
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
@@ -84,6 +189,8 @@
         NSLog(@"Error");
         NSString *alertText;
         NSString *alertTitle;
+        [mDelegate facebookLoginFail:session errors:error];
+        self.mDelegate = nil;        
         // If the error requires people using an app to make an action outside of the app in order to recover
         if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
             alertTitle = @"Something went wrong";
@@ -134,14 +241,13 @@
     
     
     // Note this handler block should be the exact same as the handler passed to any open calls.
-    [FBSession.activeSession setStateChangeHandler:
-     ^(FBSession *session, FBSessionState state, NSError *error) {
-         
-         // Retrieve the app delegate
-         WCAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-         [appDelegate sessionStateChanged:session state:state error:error];
-     }];
+//    [FBSession.activeSession setStateChangeHandler:
+//     ^(FBSession *session, FBSessionState state, NSError *error) {
+//         
+//         // Retrieve the app delegate
+//         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+//         [self sessionStateChanged:session state:state error:error];
+//     }];
     
     // You can add your app-specific url handling code here if needed
     
