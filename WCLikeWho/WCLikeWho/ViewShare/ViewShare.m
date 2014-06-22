@@ -11,7 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
-
+#import "MBProgressHUD.h"
 
 @implementation ViewShare
 @synthesize mLabelName;
@@ -93,6 +93,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -104,7 +110,57 @@
 }
 */
 - (void)shareFacebook {
-    NSLog(@"share facebook");
+
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Sharing..";
+    
+    NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
+    //[params setObject:@"your custom message" forKey:@"message"];
+    [params setObject:UIImagePNGRepresentation([self saveImage]) forKey:@"picture"];
+    
+    [FBRequestConnection startWithGraphPath:@"me/photos"
+                                 parameters:params
+                                 HTTPMethod:@"POST"
+                          completionHandler:^(FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error)
+     {
+         [hud hide:YES];
+         if (error)
+         {
+             //showing an alert for failure
+             NSLog(@"%@", error);
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                             message:@"Shared the photo fail\nPlease try again."
+                                                            delegate:self
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles:nil];
+             [alert show];
+             
+         }
+         else
+         {
+             //showing an alert for success
+             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+             hud.mode = MBProgressHUDModeText;
+             hud.labelText = @"Success";
+             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 3.0f * NSEC_PER_SEC);
+             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                 // Do something...
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+             });
+//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+//                                                             message:@"Shared the photo successfully."
+//                                                            delegate:self
+//                                                   cancelButtonTitle:@"OK"
+//                                                   otherButtonTitles:nil];
+//             [alert show];
+
+         }
+     }];
+    
+    
 }
 
 

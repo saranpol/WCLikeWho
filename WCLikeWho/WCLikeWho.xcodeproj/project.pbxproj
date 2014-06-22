@@ -121,6 +121,7 @@
 		1893031E19568ABA00CD9D89 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893030419568ABA00CD9D89 /* UIImage+WebP.m */; };
 		1893031F19568ABA00CD9D89 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893030619568ABA00CD9D89 /* UIImageView+HighlightedWebCache.m */; };
 		1893032019568ABA00CD9D89 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893030819568ABA00CD9D89 /* UIImageView+WebCache.m */; };
+		18F498B01957072C0006F1DD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F498AF1957072C0006F1DD /* MBProgressHUD.m */; };
 		43B335621950BD5F000E7442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335611950BD5F000E7442 /* Foundation.framework */; };
 		43B335641950BD5F000E7442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335631950BD5F000E7442 /* CoreGraphics.framework */; };
 		43B335661950BD5F000E7442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B335651950BD5F000E7442 /* UIKit.framework */; };
@@ -306,6 +307,8 @@
 		1893030619568ABA00CD9D89 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		1893030719568ABA00CD9D89 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		1893030819568ABA00CD9D89 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		18F498AE1957072C0006F1DD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		18F498AF1957072C0006F1DD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		43B3355E1950BD5F000E7442 /* WCLikeWho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCLikeWho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43B335611950BD5F000E7442 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43B335631950BD5F000E7442 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -377,6 +380,7 @@
 		033E18C919519A8800FEDA8D /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				18F498AD1957072C0006F1DD /* MBProgressHUD */,
 				189302D519568ABA00CD9D89 /* AFNetworking */,
 				189302E919568ABA00CD9D89 /* SDWebImage */,
 				03BA280D1952D5F400A2EF82 /* GoogleMobileAdsSdkiOS-6.9.2 */,
@@ -669,6 +673,15 @@
 				1893030819568ABA00CD9D89 /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		18F498AD1957072C0006F1DD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				18F498AE1957072C0006F1DD /* MBProgressHUD.h */,
+				18F498AF1957072C0006F1DD /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		43B335551950BD5F000E7442 = {
@@ -981,6 +994,7 @@
 				1893031919568ABA00CD9D89 /* SDWebImageManager.m in Sources */,
 				1893030D19568ABA00CD9D89 /* AFSecurityPolicy.m in Sources */,
 				1893032019568ABA00CD9D89 /* UIImageView+WebCache.m in Sources */,
+				18F498B01957072C0006F1DD /* MBProgressHUD.m in Sources */,
 				1893030919568ABA00CD9D89 /* AFHTTPRequestOperation.m in Sources */,
 				1893031119568ABA00CD9D89 /* AFURLSessionManager.m in Sources */,
 				43B335721950BD5F000E7442 /* WCAppDelegate.m in Sources */,
