@@ -14,6 +14,7 @@
     
 }
 
+@property (nonatomic, weak) IBOutlet UIImageView *mImageStar;
 @property (nonatomic, weak) IBOutlet UILabel *mLabelWCWhoLike;
 @property (nonatomic, weak) IBOutlet UILabel *mLabelYouLike;
 @property (nonatomic, weak) IBOutlet UILabel *mLabelName;
@@ -21,7 +22,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *mBtnNormalShare;
 @property (nonatomic, weak) IBOutlet UIButton *mBtnClose;
 @property (nonatomic, weak) IBOutlet UIView *mViewContent;
-
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mLoadingIndicatorImage;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mLoadingIndicatorName;
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)clickNormalShare:(id)sender;

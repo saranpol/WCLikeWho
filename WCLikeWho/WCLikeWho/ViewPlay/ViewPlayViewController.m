@@ -144,7 +144,6 @@
 
 -(IBAction) didClickStart:(id) sender {
 
-    
     [self start];
     
     return;

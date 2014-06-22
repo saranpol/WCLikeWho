@@ -23,11 +23,19 @@
 #define FONT_1 @"ContextRepriseLightSSiLight"
 #define FONT_0 @"ContextRepriseLightSSiExtraLight"
 
+enum tagname {
+    USER_IS_MALE,
+    USER_IS_FEMALE,
+};
+
 @interface API : NSObject {
 @public
+    //int mUserGender;
 }
 
 +(API*)getAPI;
+
+@property (nonatomic) int mUserGender;
 
 - (void)saveDictDataForKey:(id)key data:(NSDictionary*)data;
 - (NSDictionary*)loadDictDataForKey:(id)key;

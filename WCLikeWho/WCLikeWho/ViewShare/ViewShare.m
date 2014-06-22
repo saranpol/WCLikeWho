@@ -9,6 +9,9 @@
 #import "ViewShare.h"
 #import "API.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+
 
 @implementation ViewShare
 @synthesize mLabelName;
@@ -18,6 +21,9 @@
 @synthesize mBtnFBShare;
 @synthesize mBtnNormalShare;
 @synthesize mViewContent;
+@synthesize mLoadingIndicatorImage;
+@synthesize mLoadingIndicatorName;
+@synthesize mImageStar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    API *a = [API getAPI];
     
     [mLabelName setFont:[UIFont fontWithName:FONT_1 size:mLabelName.font.pointSize]];
     [mLabelWCWhoLike setFont:[UIFont fontWithName:FONT_1 size:mLabelWCWhoLike.font.pointSize]];
@@ -40,7 +47,45 @@
     [mBtnNormalShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnNormalShare.titleLabel.font.pointSize]];
     [mBtnFBShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnFBShare.titleLabel.font.pointSize]];
     [mBtnClose.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnClose.titleLabel.font.pointSize]];
+    
+    if (a.mUserGender == USER_IS_MALE)
+        [mLabelYouLike setText:@"You Look Like"];
+    else if (a.mUserGender == USER_IS_FEMALE)
+        [mLabelYouLike setText:@"Your Boy Friend Look Like"];
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://world-cup-brazil.appspot.com/get_star" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* data = (NSDictionary*)responseObject;
+        [self updateUIWithData:data];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self updateUIWithData:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:[error localizedFailureReason]
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
+    
+    
+    
+    
 }
+
+- (void)updateUIWithData:(NSDictionary*)data {
+    [mLoadingIndicatorName setHidden:YES];
+    if (data) {
+        NSString *starName = [data objectForKey:@"name"];
+        NSString *strUrl = [data objectForKey:@"url"];
+        NSURL *url = [NSURL URLWithString:strUrl];
+        [mLabelName setText:starName];
+        [mImageStar sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [mLoadingIndicatorImage setHidden:YES];
+        }];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {

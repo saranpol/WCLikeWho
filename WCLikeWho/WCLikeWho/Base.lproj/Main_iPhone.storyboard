@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gg7-5G-qg4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                         </state>
                                         <state key="highlighted" image="btn_male_pressed.png"/>
                                         <connections>
-                                            <segue destination="r5q-s2-Euz" kind="modal" id="M1Q-hW-Lv3"/>
+                                            <segue destination="r5q-s2-Euz" kind="modal" identifier="SelectMale" id="M1Q-hW-Lv3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8F-lK-4DZ">
@@ -46,7 +46,7 @@
                                         </state>
                                         <state key="highlighted" image="btn_female_pressed.png"/>
                                         <connections>
-                                            <segue destination="r5q-s2-Euz" kind="modal" id="0V4-Pl-FQ9"/>
+                                            <segue destination="r5q-s2-Euz" kind="modal" identifier="SelectFemale" id="0V4-Pl-FQ9"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uai-yN-Fch">
@@ -180,18 +180,22 @@
                                                 <rect key="frame" x="1" y="224" width="300" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Didier Drogba" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cn-dY-dgR">
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cn-dY-dgR">
                                                         <rect key="frame" x="10" y="1" width="281" height="46"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TcU-Nb-Ffc">
+                                                        <rect key="frame" x="140" y="14" width="20" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.8862745098" green="0.47843137250000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Look Like" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T92-DW-bh5">
-                                                <rect key="frame" x="12" y="203" width="270" height="21"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T92-DW-bh5">
+                                                <rect key="frame" x="12" y="205" width="270" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.8862745098" green="0.47843137250000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,10 +208,14 @@
                                                 <color key="textColor" red="0.8862745098" green="0.47843137250000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Didier Drogba.png" translatesAutoresizingMaskIntoConstraints="NO" id="FOA-TB-Mzo">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOA-TB-Mzo">
                                                 <rect key="frame" x="11" y="10" width="280" height="187"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-3F-GXd">
+                                                <rect key="frame" x="141" y="94" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -259,9 +267,12 @@
                         <outlet property="mBtnClose" destination="nul-jA-6jF" id="bTu-Hp-qgF"/>
                         <outlet property="mBtnFBShare" destination="Pzz-JN-xi3" id="hIy-C7-YLV"/>
                         <outlet property="mBtnNormalShare" destination="MZx-DM-qxH" id="Bmf-Ot-cvc"/>
+                        <outlet property="mImageStar" destination="FOA-TB-Mzo" id="Qfe-z5-ocI"/>
                         <outlet property="mLabelName" destination="3cn-dY-dgR" id="Jzp-wo-O6D"/>
                         <outlet property="mLabelWCWhoLike" destination="cYY-j7-l8d" id="rgi-ql-ICP"/>
                         <outlet property="mLabelYouLike" destination="T92-DW-bh5" id="p0X-bN-wll"/>
+                        <outlet property="mLoadingIndicatorImage" destination="Htw-3F-GXd" id="B60-rZ-XTT"/>
+                        <outlet property="mLoadingIndicatorName" destination="TcU-Nb-Ffc" id="PWK-Md-qrX"/>
                         <outlet property="mViewContent" destination="Rto-oY-HJF" id="VHl-6K-EYR"/>
                     </connections>
                 </viewController>
@@ -271,7 +282,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Didier Drogba.png" width="280" height="187"/>
         <image name="bg_share.png" width="302" height="302"/>
         <image name="btn_back.png" width="7" height="30"/>
         <image name="btn_brown.png" width="302" height="47"/>
@@ -293,6 +303,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="M1Q-hW-Lv3"/>
+        <segue reference="0V4-Pl-FQ9"/>
     </inferredMetricsTieBreakers>
 </document>

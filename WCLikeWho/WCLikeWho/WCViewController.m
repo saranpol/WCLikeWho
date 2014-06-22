@@ -52,6 +52,17 @@
 
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    API *a = [API getAPI];
+    if([[segue identifier] isEqualToString:@"SelectMale"]){
+        a.mUserGender = USER_IS_MALE;
+    } else if ([[segue identifier] isEqualToString:@"SelectFemale"]) {
+        a.mUserGender = USER_IS_FEMALE;
+    }
+}
+
+
+
 
 #pragma mark GADRequest generation
 
