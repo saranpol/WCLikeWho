@@ -46,7 +46,7 @@
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
 
-    NSArray *permissions = [NSArray arrayWithObjects:@"email", @"user_likes", nil];
+    NSArray *permissions = [NSArray arrayWithObjects:@"email", @"public_profile", nil];
     return [FBSession openActiveSessionWithReadPermissions:permissions
                                               allowLoginUI:allowLoginUI
                                          completionHandler:^(FBSession *session,

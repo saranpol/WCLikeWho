@@ -1154,6 +1154,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",
@@ -1175,6 +1176,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",

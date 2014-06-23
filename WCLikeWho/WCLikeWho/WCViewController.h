@@ -17,7 +17,6 @@
     
 }
 
-
 @property (nonatomic, weak) IBOutlet UILabel *mLabelGender;
 
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;

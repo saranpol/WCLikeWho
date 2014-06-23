@@ -29,7 +29,13 @@
     CGPoint origin = CGPointMake(0.0f, 0.0f);
     
     // Use predefined GADAdSize constants to define the GADBannerView.
-    self.mAdBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin];
+    
+    GADAdSize adSize = kGADAdSizeBanner;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        adSize = kGADAdSizeLeaderboard;
+    
+    
+    self.mAdBanner = [[GADBannerView alloc] initWithAdSize:adSize origin:origin];
     
     // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
     self.mAdBanner.adUnitID = kSampleAdUnitID;
@@ -83,11 +89,11 @@
 
 // We've received an ad successfully.
 - (void)adViewDidReceiveAd:(GADBannerView *)adView {
-    NSLog(@"Received ad successfully");
+    // NSLog(@"Received ad successfully");
 }
 
 - (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
+    // NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
 }
 
 

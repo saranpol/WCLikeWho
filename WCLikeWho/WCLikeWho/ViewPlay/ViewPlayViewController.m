@@ -55,7 +55,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    mSlotMachine.contentInset = UIEdgeInsetsMake(5, 18, 5, 8);
+    mSlotMachine.contentInset = UIEdgeInsetsMake(5, 19, 5, 8);
     mSlotMachine.backgroundImage = [UIImage imageNamed:@"role"];
     mSlotMachine.coverImage = [UIImage imageNamed:@"mask"];
     mSlotMachine.delegate = self;
@@ -66,8 +66,12 @@
     // Admob
     CGPoint origin = CGPointMake(0.0f, 0.0f);
     
+    GADAdSize adSize = kGADAdSizeBanner;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        adSize = kGADAdSizeLeaderboard;
+    
     // Use predefined GADAdSize constants to define the GADBannerView.
-    self.mAdBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin];
+    self.mAdBanner = [[GADBannerView alloc] initWithAdSize:adSize origin:origin];
     
     // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
     self.mAdBanner.adUnitID = kSampleAdUnitID;
@@ -120,11 +124,11 @@
 
 // We've received an ad successfully.
 - (void)adViewDidReceiveAd:(GADBannerView *)adView {
-    NSLog(@"Received ad successfully");
+    // NSLog(@"Received ad successfully");
 }
 
 - (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
+    // NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
 }
 
 
@@ -218,12 +222,15 @@
 
 - (void)slotMachineDidEndSliding:(ZCSlotMachine *)slotMachine {
     API *a = [API getAPI];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        ViewShare *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewShare"];
+        [self presentViewController:vc animated:YES completion:nil];
+        mButton.enabled = YES;
+        [a gotStar];
+    });
     
-    mButton.enabled = YES;
-    
-    [a gotStar];
-    ViewShare *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewShare"];
-    [self presentViewController:vc animated:YES completion:nil];
+
 }
 
 #pragma mark - ZCSlotMachineDataSource
