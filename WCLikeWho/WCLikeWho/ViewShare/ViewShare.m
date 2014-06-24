@@ -51,7 +51,7 @@
     if (a.mUserGender == USER_IS_MALE)
         [mLabelYouLike setText:@"You Look Like"];
     else if (a.mUserGender == USER_IS_FEMALE)
-        [mLabelYouLike setText:@"Your Boy Friend Look Like"];
+        [mLabelYouLike setText:@"Your Boyfriend Looks Like"];
     
     
     

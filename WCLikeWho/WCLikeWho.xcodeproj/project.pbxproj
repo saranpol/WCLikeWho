@@ -23,6 +23,8 @@
 		03BA282B1952D6E100A2EF82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BA282A1952D6E100A2EF82 /* SystemConfiguration.framework */; };
 		03BA282F1952F7E800A2EF82 /* Context Reprise Light SSi Extra Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03BA282D1952F7E800A2EF82 /* Context Reprise Light SSi Extra Light.ttf */; };
 		03BA28301952F7E800A2EF82 /* Context Reprise Light SSi Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03BA282E1952F7E800A2EF82 /* Context Reprise Light SSi Light.ttf */; };
+		03BB141919595C8D00EBA85C /* mask@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BB141719595C8D00EBA85C /* mask@2x~ipad.png */; };
+		03BB141A19595C8D00EBA85C /* role@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BB141819595C8D00EBA85C /* role@2x~ipad.png */; };
 		1893030919568ABA00CD9D89 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 189302D719568ABA00CD9D89 /* AFHTTPRequestOperation.m */; };
 		1893030A19568ABA00CD9D89 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189302D919568ABA00CD9D89 /* AFHTTPRequestOperationManager.m */; };
 		1893030B19568ABA00CD9D89 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189302DB19568ABA00CD9D89 /* AFHTTPSessionManager.m */; };
@@ -204,6 +206,8 @@
 		03BA282A1952D6E100A2EF82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		03BA282D1952F7E800A2EF82 /* Context Reprise Light SSi Extra Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Context Reprise Light SSi Extra Light.ttf"; sourceTree = "<group>"; };
 		03BA282E1952F7E800A2EF82 /* Context Reprise Light SSi Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Context Reprise Light SSi Light.ttf"; sourceTree = "<group>"; };
+		03BB141719595C8D00EBA85C /* mask@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask@2x~ipad.png"; sourceTree = "<group>"; };
+		03BB141819595C8D00EBA85C /* role@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "role@2x~ipad.png"; sourceTree = "<group>"; };
 		189302D619568ABA00CD9D89 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		189302D719568ABA00CD9D89 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		189302D819568ABA00CD9D89 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -747,6 +751,8 @@
 		18D49DC419591A80007864DD /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				03BB141719595C8D00EBA85C /* mask@2x~ipad.png */,
+				03BB141819595C8D00EBA85C /* role@2x~ipad.png */,
 				18D49DC519591A80007864DD /* btn_back@2x.png */,
 				18D49DC619591A80007864DD /* btn_back@2x~ipad.png */,
 				18D49DC719591A80007864DD /* btn_white@2x.png */,
@@ -979,6 +985,7 @@
 				18D49DFC19591A80007864DD /* btn_male_pressed@2x~ipad.png in Resources */,
 				18D49E2819591A80007864DD /* btn_white@2x~ipad.png in Resources */,
 				18D49DEC19591A80007864DD /* Usa.png in Resources */,
+				03BB141919595C8D00EBA85C /* mask@2x~ipad.png in Resources */,
 				18D49DDB19591A80007864DD /* France.png in Resources */,
 				18D49DEE19591A80007864DD /* btn_female_normal~ipad.png in Resources */,
 				18D49DD119591A80007864DD /* Bosnia-And-Herzegovina.png in Resources */,
@@ -1015,6 +1022,7 @@
 				18D49DD419591A80007864DD /* Chile.png in Resources */,
 				18D49E1B19591A80007864DD /* btn_back.png in Resources */,
 				18D49DD919591A80007864DD /* Ecuador.png in Resources */,
+				03BB141A19595C8D00EBA85C /* role@2x~ipad.png in Resources */,
 				18D49DF719591A80007864DD /* btn_female_pressed@2x.png in Resources */,
 				18D49E0119591A80007864DD /* btn_brown.png in Resources */,
 				18D49DDE19591A80007864DD /* Greece.png in Resources */,
@@ -1231,6 +1239,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/FacebookSDK",
@@ -1238,12 +1247,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F4CC57D0-5D9A-40EE-A41A-EDE65F92D493";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1253,6 +1263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/FacebookSDK",
@@ -1260,12 +1271,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F4CC57D0-5D9A-40EE-A41A-EDE65F92D493";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -16,6 +16,7 @@
 @interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate, GADBannerViewDelegate> {
 @public
     BOOL mIsiPad;
+    BOOL mIsInit;
 }
 
 @property (nonatomic, weak) IBOutlet ZCSlotMachine *mSlotMachine;

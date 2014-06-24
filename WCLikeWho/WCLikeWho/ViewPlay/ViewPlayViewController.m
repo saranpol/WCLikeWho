@@ -84,7 +84,6 @@
     
     // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID before compiling.
     self.mAdBanner.adUnitID = kSampleAdUnitID;
-    self.mAdBanner.delegate = self;
     self.mAdBanner.rootViewController = self;
     [mViewAdParent addSubview:self.mAdBanner];
     GADRequest *request = [GADRequest request];
@@ -94,9 +93,10 @@
     [mLabelCaption setFont:[UIFont fontWithName:FONT_1 size:mLabelCaption.font.pointSize]];
 
     
-//    mSlotMachine.singleUnitDuration = 0.0f;
-//    [self start];
-      mSlotMachine.singleUnitDuration = 0.07f;
+    mSlotMachine.singleUnitDuration = 0.0f;
+    mIsInit = YES;
+    [self start];
+    mSlotMachine.singleUnitDuration = 0.07f;
     
     [mButton.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mButton.titleLabel.font.pointSize]];
     
@@ -198,7 +198,6 @@
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    
     mButton.highlighted = YES;
     [mButton performSelector:@selector(setHighlighted:) withObject:[NSNumber numberWithBool:NO] afterDelay:0.8];
     
@@ -212,9 +211,18 @@
 }
 
 - (void)slotMachineDidEndSliding:(ZCSlotMachine *)slotMachine {
+    
+    if (mIsInit) {
+        mButton.enabled = YES;
+        mIsInit = NO;
+        return;
+    }
+    
     API *a = [API getAPI];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0f * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if (mIsInit)
+            return;
         ViewShare *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewShare"];
         [self presentViewController:vc animated:YES completion:nil];
         mButton.enabled = YES;
