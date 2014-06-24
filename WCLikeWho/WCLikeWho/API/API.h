@@ -11,7 +11,7 @@
 
 #define kGotStar @"kGotStar"
 
-#define kSampleAdUnitID @"ca-app-pub-6262014690363579/1499004043"
+#define kSampleAdUnitID @"ca-app-pub-6262014690363579/4900978847"
 
 
 // Social

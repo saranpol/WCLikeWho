@@ -87,7 +87,8 @@
     self.mAdBanner.delegate = self;
     self.mAdBanner.rootViewController = self;
     [mViewAdParent addSubview:self.mAdBanner];
-    [self.mAdBanner loadRequest:[self request]];
+    GADRequest *request = [GADRequest request];
+    [self.mAdBanner loadRequest:request];
     
     
     [mLabelCaption setFont:[UIFont fontWithName:FONT_1 size:mLabelCaption.font.pointSize]];
@@ -108,24 +109,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-
-
-#pragma mark GADRequest generation
-
-- (GADRequest *)request {
-    GADRequest *request = [GADRequest request];
-    
-    // Make the request for a test ad. Put in an identifier for the simulator as well as any devices
-    // you want to receive test ads.
-    request.testDevices = @[
-                            // TODO: Add your device/simulator test identifiers here. Your device identifier is printed to
-                            // the console when the app is launched.
-                            GAD_SIMULATOR_ID
-                            ];
-    return request;
 }
 
 #pragma mark GADBannerViewDelegate implementation

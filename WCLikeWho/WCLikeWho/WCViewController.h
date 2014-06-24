@@ -22,6 +22,4 @@
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;
 
-- (GADRequest *)request;
-
 @end

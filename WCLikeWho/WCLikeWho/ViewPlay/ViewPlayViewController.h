@@ -29,9 +29,6 @@
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;
 
-
-- (GADRequest *)request;
-
 -(IBAction)didClickStart:(id)sender;
 -(IBAction)didClickBack:(id)sender;
 

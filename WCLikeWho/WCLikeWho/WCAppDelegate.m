@@ -45,7 +45,6 @@
 
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-
     NSArray *permissions = [NSArray arrayWithObjects:@"email", @"public_profile", nil];
     return [FBSession openActiveSessionWithReadPermissions:permissions
                                               allowLoginUI:allowLoginUI
@@ -91,7 +90,7 @@
         // Show the user the logged-in UI
         // [self userLoggedIn];
         
-        NSLog(@"FBSessionStateOpen");
+        // NSLog(@"FBSessionStateOpen");
         
         
         // Check for publish permissions
