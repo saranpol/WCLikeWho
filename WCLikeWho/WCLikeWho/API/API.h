@@ -28,6 +28,9 @@ enum tagname {
     USER_IS_FEMALE,
 };
 
+@class AFHTTPRequestOperation;
+@class AFHTTPRequestOperationManager;
+
 @interface API : NSObject {
 @public
     //int mUserGender;
@@ -37,10 +40,16 @@ enum tagname {
 
 @property (nonatomic) int mUserGender;
 
+@property (nonatomic, strong) AFHTTPRequestOperationManager *mRequest;
+@property (nonatomic, strong) NSDictionary *mData;
+
 - (void)saveDictDataForKey:(id)key data:(NSDictionary*)data;
 - (NSDictionary*)loadDictDataForKey:(id)key;
 - (BOOL)isTimeToCanClick;
 - (void)gotStar;
 - (int)canClickTimeRemaining;
+
+- (void)requestStarSilentlyWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end

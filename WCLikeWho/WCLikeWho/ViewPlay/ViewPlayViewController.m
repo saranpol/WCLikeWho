@@ -14,7 +14,7 @@
 #import "GADBannerView.h"
 #import "GADRequest.h"
 #import "API.h"
-
+#import "AFNetworking.h"
 
 @implementation ViewPlayViewController
 @synthesize mButton;
@@ -55,7 +55,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    mSlotMachine.contentInset = UIEdgeInsetsMake(5, 19, 5, 8);
+    [[API getAPI] requestStarSilentlyWithSuccess:nil failure:nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        mIsiPad=YES;
+    UIEdgeInsets edgeInset = UIEdgeInsetsMake(5, 19, 5, 8);
+    
+    if (mIsiPad)
+        edgeInset = UIEdgeInsetsMake(7, 40, 7, 8);
+    
+    mSlotMachine.contentInset = edgeInset;
     mSlotMachine.backgroundImage = [UIImage imageNamed:@"role"];
     mSlotMachine.coverImage = [UIImage imageNamed:@"mask"];
     mSlotMachine.delegate = self;
@@ -67,7 +76,7 @@
     CGPoint origin = CGPointMake(0.0f, 0.0f);
     
     GADAdSize adSize = kGADAdSizeBanner;
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    if (mIsiPad)
         adSize = kGADAdSizeLeaderboard;
     
     // Use predefined GADAdSize constants to define the GADBannerView.
@@ -90,11 +99,10 @@
     
     [mButton.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mButton.titleLabel.font.pointSize]];
     
-    
-    
 //    
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -244,11 +252,17 @@
 }
 
 - (CGFloat)slotWidthInSlotMachine:(ZCSlotMachine *)slotMachine {
-    return 60.0f;
+    if (mIsiPad)
+        return 95.0f;
+    else
+        return 60.0f;
 }
 
 - (CGFloat)slotSpacingInSlotMachine:(ZCSlotMachine *)slotMachine {
-    return 14;
+    if (mIsiPad)
+        return 30;
+    else
+        return 14;
 }
 
 @end

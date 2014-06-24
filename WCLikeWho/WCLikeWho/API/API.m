@@ -7,11 +7,13 @@
 //
 
 #import "API.h"
+#import "AFNetworking.h"
 
 static API *instance;
 
 @implementation API
-
+@synthesize mRequest;
+@synthesize mData;
 - (instancetype)init
 {
     self = [super init];
@@ -79,6 +81,35 @@ static API *instance;
     NSTimeInterval diff = [datePlusFiftyMinute timeIntervalSinceDate:now];
     return (diff / 60) + 1;
 }
+
+
+
+
+- (void)requestStarSilentlyWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+
+    if (mData) {
+        if (success)
+            success(nil, mData);
+    } else {
+        if (mRequest) {
+            [[mRequest operationQueue] cancelAllOperations];
+            mRequest = nil;
+        }
+        self.mRequest = [AFHTTPRequestOperationManager manager];
+        [mRequest GET:@"http://world-cup-brazil.appspot.com/get_star" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            mData = (NSDictionary*)responseObject;
+            if (success)
+                success(nil, mData);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            if (failure)
+                failure(operation, error);
+        }];
+    }
+    
+    
+}
+
 
 
 @end

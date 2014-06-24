@@ -54,9 +54,9 @@
         [mLabelYouLike setText:@"Your Boy Friend Look Like"];
     
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://world-cup-brazil.appspot.com/get_star" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary* data = (NSDictionary*)responseObject;
+    
+    [a requestStarSilentlyWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *data = (NSDictionary*)responseObject;
         [self updateUIWithData:data];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self updateUIWithData:nil];
@@ -71,7 +71,9 @@
     
     
     
+    
 }
+
 
 - (void)updateUIWithData:(NSDictionary*)data {
     [mLoadingIndicatorName setHidden:YES];

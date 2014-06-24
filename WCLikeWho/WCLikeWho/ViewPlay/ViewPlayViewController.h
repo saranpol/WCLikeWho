@@ -15,7 +15,7 @@
 
 @interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate, GADBannerViewDelegate> {
 @public
-    
+    BOOL mIsiPad;
 }
 
 @property (nonatomic, weak) IBOutlet ZCSlotMachine *mSlotMachine;
@@ -28,6 +28,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *mLabelCaption;
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;
+
+
 - (GADRequest *)request;
 
 -(IBAction)didClickStart:(id)sender;

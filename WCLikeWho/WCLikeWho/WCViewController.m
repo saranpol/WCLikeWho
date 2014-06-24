@@ -29,6 +29,8 @@
     CGPoint origin = CGPointMake(0.0f, 0.0f);
     
     // Use predefined GADAdSize constants to define the GADBannerView.
+    [[API getAPI] requestStarSilentlyWithSuccess:nil failure:nil];
+    
     
     GADAdSize adSize = kGADAdSizeBanner;
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
