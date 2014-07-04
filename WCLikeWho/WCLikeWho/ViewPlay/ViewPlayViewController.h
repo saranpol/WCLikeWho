@@ -23,7 +23,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *mButton;
 
 
-@property (nonatomic, strong) NSArray *mSlotIcons;
+@property (nonatomic, strong) NSMutableArray *mSlotIcons;
 
 
 @property (nonatomic, weak) IBOutlet UILabel *mLabelCaption;

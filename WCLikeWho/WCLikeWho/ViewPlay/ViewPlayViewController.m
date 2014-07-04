@@ -36,16 +36,11 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        mSlotIcons = [NSArray arrayWithObjects:
-                      [UIImage imageNamed:@"Algeria"], [UIImage imageNamed:@"Argentina"], [UIImage imageNamed:@"Australia"], [UIImage imageNamed:@"Belgium"]
-                      , [UIImage imageNamed:@"Bosnia-And-Herzegovina"], [UIImage imageNamed:@"Brazil"], [UIImage imageNamed:@"Cameroon"]
-                      ,[UIImage imageNamed:@"Chile"], [UIImage imageNamed:@"Colombia"], [UIImage imageNamed:@"Costa-Rica"] ,[UIImage imageNamed:@"Côte-D'ivoire"]
-                      , [UIImage imageNamed:@"Croatia"], [UIImage imageNamed:@"Ecuador"], [UIImage imageNamed:@"England"], [UIImage imageNamed:@"France"]
-                      , [UIImage imageNamed:@"Germany"], [UIImage imageNamed:@"Ghana"], [UIImage imageNamed:@"Greece"], [UIImage imageNamed:@"Honduras"]
-                      , [UIImage imageNamed:@"Iran"], [UIImage imageNamed:@"Italy"], [UIImage imageNamed:@"Japan"], [UIImage imageNamed:@"Korea-Republic"]
-                      , [UIImage imageNamed:@"Mexico"], [UIImage imageNamed:@"Netherlands"], [UIImage imageNamed:@"Nigeria"], [UIImage imageNamed:@"Portugal"]
-                      ,[UIImage imageNamed:@"Russia"], [UIImage imageNamed:@"Spain"], [UIImage imageNamed:@"Switzerland"], [UIImage imageNamed:@"Uruguay"]
-                      , [UIImage imageNamed:@"Usa"], nil];
+        
+        mSlotIcons = [NSMutableArray new];
+        for (int i = 1; i < 32; i++) {
+            [mSlotIcons addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%d", i]]];
+        }
     }
     return self;
 }

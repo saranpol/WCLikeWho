@@ -48,10 +48,10 @@
     [mBtnFBShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnFBShare.titleLabel.font.pointSize]];
     [mBtnClose.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnClose.titleLabel.font.pointSize]];
     
-    if (a.mUserGender == USER_IS_MALE)
+//    if (a.mUserGender == USER_IS_MALE)
         [mLabelYouLike setText:@"You Look Like"];
-    else if (a.mUserGender == USER_IS_FEMALE)
-        [mLabelYouLike setText:@"Your Boyfriend Looks Like"];
+//    else if (a.mUserGender == USER_IS_FEMALE)
+//        [mLabelYouLike setText:@"Your Boyfriend Looks Like"];
     
     
     
