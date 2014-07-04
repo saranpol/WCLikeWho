@@ -42,6 +42,7 @@ enum tagname {
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *mRequest;
 @property (nonatomic, strong) NSDictionary *mData;
+@property (nonatomic, strong) UIImage *mUserImage;
 
 - (void)saveDictDataForKey:(id)key data:(NSDictionary*)data;
 - (NSDictionary*)loadDictDataForKey:(id)key;

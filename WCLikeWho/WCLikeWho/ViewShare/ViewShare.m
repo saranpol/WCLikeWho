@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
+#import "UIView+Circle.h"
 
 @implementation ViewShare
 @synthesize mLabelName;
@@ -24,6 +25,8 @@
 @synthesize mLoadingIndicatorImage;
 @synthesize mLoadingIndicatorName;
 @synthesize mImageStar;
+@synthesize mImgUser;
+@synthesize mImgBG;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,7 +52,7 @@
     [mBtnClose.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnClose.titleLabel.font.pointSize]];
     
 //    if (a.mUserGender == USER_IS_MALE)
-        [mLabelYouLike setText:@"You Look Like"];
+        [mLabelYouLike setText:@"Look Like"];
 //    else if (a.mUserGender == USER_IS_FEMALE)
 //        [mLabelYouLike setText:@"Your Boyfriend Looks Like"];
     
@@ -61,15 +64,16 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self updateUIWithData:nil];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:[error localizedFailureReason]
+                                                        message:@"Please check your internet connection."
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
     }];
     
-    
-    
+    [mImgUser setImage:a.mUserImage];
+    [mImgUser setCircle];
+    [mImgBG setCircle];
     
     
 }

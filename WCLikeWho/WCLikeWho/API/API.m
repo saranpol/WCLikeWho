@@ -14,6 +14,7 @@ static API *instance;
 @implementation API
 @synthesize mRequest;
 @synthesize mData;
+@synthesize mUserImage;
 - (instancetype)init
 {
     self = [super init];

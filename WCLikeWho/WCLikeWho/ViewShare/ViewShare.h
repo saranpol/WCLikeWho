@@ -24,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet UIView *mViewContent;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mLoadingIndicatorImage;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mLoadingIndicatorName;
+@property (nonatomic, weak) IBOutlet UIImageView *mImgUser;
+@property (nonatomic, weak) IBOutlet UIView *mImgBG;
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)clickNormalShare:(id)sender;

@@ -12,7 +12,7 @@
 @class GADBannerView;
 @class GADRequest;
 
-@interface WCViewController : UIViewController <GADBannerViewDelegate> {
+@interface WCViewController : UIViewController <GADBannerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 @public
     
 }
@@ -21,5 +21,11 @@
 
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;
+
+
+// new
+@property (nonatomic, weak) IBOutlet UIButton *mButtonDone;
+@property (nonatomic, weak) IBOutlet UIImageView *mImgUser;
+- (IBAction)clickChooseUser:(id)sender;
 
 @end

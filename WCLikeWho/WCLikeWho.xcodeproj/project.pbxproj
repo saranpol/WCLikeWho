@@ -14,6 +14,7 @@
 		0365E0C91952A9CE00A52E8F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */; };
 		0391000019669F8F00BC6E60 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391FFE119669F8F00BC6E60 /* 8.png */; };
 		0391000119669F8F00BC6E60 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391FFE219669F8F00BC6E60 /* 9.png */; };
+		039100051966C41900BC6E60 /* UIView+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 039100041966C41900BC6E60 /* UIView+Circle.m */; };
 		0391FFE319669F8F00BC6E60 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391FFC419669F8F00BC6E60 /* 1.png */; };
 		0391FFE419669F8F00BC6E60 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391FFC519669F8F00BC6E60 /* 10.png */; };
 		0391FFE519669F8F00BC6E60 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0391FFC619669F8F00BC6E60 /* 11.png */; };
@@ -182,6 +183,8 @@
 		033E18CF1951B6CF00FEDA8D /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		033E18D01951B6CF00FEDA8D /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		039100031966C41900BC6E60 /* UIView+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Circle.h"; sourceTree = "<group>"; };
+		039100041966C41900BC6E60 /* UIView+Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Circle.m"; sourceTree = "<group>"; };
 		0391FFC419669F8F00BC6E60 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		0391FFC519669F8F00BC6E60 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		0391FFC619669F8F00BC6E60 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 		033E18C919519A8800FEDA8D /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				039100021966C41900BC6E60 /* UIView+Circle */,
 				18F498AD1957072C0006F1DD /* MBProgressHUD */,
 				189302D519568ABA00CD9D89 /* AFNetworking */,
 				189302E919568ABA00CD9D89 /* SDWebImage */,
@@ -458,6 +462,15 @@
 				0365E0C81952A9CE00A52E8F /* FacebookSDK.framework */,
 			);
 			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		039100021966C41900BC6E60 /* UIView+Circle */ = {
+			isa = PBXGroup;
+			children = (
+				039100031966C41900BC6E60 /* UIView+Circle.h */,
+				039100041966C41900BC6E60 /* UIView+Circle.m */,
+			);
+			path = "UIView+Circle";
 			sourceTree = "<group>";
 		};
 		0391FFC319669F8F00BC6E60 /* animal */ = {
@@ -1068,6 +1081,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1893031C19568ABA00CD9D89 /* UIImage+GIF.m in Sources */,
+				039100051966C41900BC6E60 /* UIView+Circle.m in Sources */,
 				1893030E19568ABA00CD9D89 /* AFURLConnectionOperation.m in Sources */,
 				033E18C6195199F300FEDA8D /* ViewPlayViewController.m in Sources */,
 				43B3359F1950C201000E7442 /* ViewShare.m in Sources */,
