@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic, weak) IBOutlet UILabel *mLabelGender;
+@property (nonatomic, weak) IBOutlet UILabel *mLabelYourPhoto;
 
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;

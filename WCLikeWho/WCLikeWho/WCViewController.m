@@ -22,6 +22,7 @@
 @synthesize mLabelGender;
 @synthesize mButtonDone;
 @synthesize mImgUser;
+@synthesize mLabelYourPhoto;
 
 - (void)viewDidAppear:(BOOL)animated {
     API *a = [API getAPI];
@@ -58,6 +59,8 @@
     
     
     [mLabelGender setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
+    [mLabelYourPhoto setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
+    
     
     [mButtonDone setEnabled:NO];
     
@@ -83,6 +86,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingImage:(UIImage *)image
                   editingInfo:(NSDictionary *)editingInfo {
+    
+    if (image)
+        [mLabelYourPhoto setHidden:YES];
+    
     API *a = [API getAPI];
     a.mUserImage = image;
     [mImgUser setImage:a.mUserImage];
