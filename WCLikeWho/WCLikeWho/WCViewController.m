@@ -76,6 +76,7 @@
 - (IBAction)clickChooseUser:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController = [[UIImagePickerController alloc] init];
+    [imagePickerController setAllowsEditing:YES];
     imagePickerController.delegate = self;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -83,17 +84,18 @@
 }
 
 
-- (void)imagePickerController:(UIImagePickerController *)picker
-        didFinishPickingImage:(UIImage *)image
-                  editingInfo:(NSDictionary *)editingInfo {
-    
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+
+
+    UIImage *image = (UIImage*)[info objectForKey:@"UIImagePickerControllerEditedImage"];
     if (image)
         [mLabelYourPhoto setHidden:YES];
+    //NSLog(@"%@", info);
     
     API *a = [API getAPI];
     a.mUserImage = image;
     [mImgUser setImage:a.mUserImage];
-    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     [mButtonDone setEnabled:YES];
 }
 
