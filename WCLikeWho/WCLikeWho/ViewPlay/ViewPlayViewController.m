@@ -170,10 +170,10 @@
 - (void)start {
     NSUInteger slotIconCount = [mSlotIcons count];
     
-    NSUInteger slotOneIndex = abs(rand() % slotIconCount);
-    NSUInteger slotTwoIndex = abs(rand() % slotIconCount);
-    NSUInteger slotThreeIndex = abs(rand() % slotIconCount);
-    NSUInteger slotFourIndex = abs(rand() % slotIconCount);
+    NSUInteger slotOneIndex = (rand() % slotIconCount);
+    NSUInteger slotTwoIndex = (rand() % slotIconCount);
+    NSUInteger slotThreeIndex = (rand() % slotIconCount);
+    NSUInteger slotFourIndex = (rand() % slotIconCount);
     
     // NSLog(@"%d , %d, %d, %d", (int)slotOneIndex, (int)slotTwoIndex, (int)slotThreeIndex, (int)slotFourIndex);
     
