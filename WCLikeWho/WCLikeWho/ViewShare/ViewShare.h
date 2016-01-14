@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WCAppDelegate.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface ViewShare : UIViewController <FacebookLoginDelegate> {
 @public

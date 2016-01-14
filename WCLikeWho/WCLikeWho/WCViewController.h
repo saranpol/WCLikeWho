@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GADBannerViewDelegate.h"
+#import <GoogleMobileAds/GADBannerView.h>
+#import <GoogleMobileAds/GADInterstitial.h>
 
 @class GADBannerView;
 @class GADRequest;

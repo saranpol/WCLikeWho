@@ -51,12 +51,7 @@
     [mBtnFBShare.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnFBShare.titleLabel.font.pointSize]];
     [mBtnClose.titleLabel setFont:[UIFont fontWithName:FONT_1 size:mBtnClose.titleLabel.font.pointSize]];
     
-//    if (a.mUserGender == USER_IS_MALE)
-        [mLabelYouLike setText:@"You Look Like"];
-//    else if (a.mUserGender == USER_IS_FEMALE)
-//        [mLabelYouLike setText:@"Your Boyfriend Looks Like"];
-    
-    
+    [mLabelYouLike setText:@"You Look Like"];
     
     [a requestStarSilentlyWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *data = (NSDictionary*)responseObject;
@@ -84,11 +79,21 @@
     if (data) {
         NSString *starName = [data objectForKey:@"name"];
         NSString *strUrl = [data objectForKey:@"url"];
+        //strUrl = @"https://world-cup-brazil.appspot.com/images/reborn-chimpanzee.jpg";
+        
+        
+        strUrl = [strUrl stringByReplacingOccurrencesOfString:@"http"
+                                             withString:@"https"];
+
         NSURL *url = [NSURL URLWithString:strUrl];
         [mLabelName setText:starName];
+        
         [mImageStar sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             [mLoadingIndicatorImage setHidden:YES];
         }];
+        
+//        [mLoadingIndicatorImage setHidden:YES];
+//        [mImageStar sd_setImageWithURL:url];
     }
 }
 

@@ -11,8 +11,8 @@
 #import "API.h"
 #import "WCAppDelegate.h"
 #import "WCViewController.h"
-#import "GADBannerView.h"
-#import "GADRequest.h"
+#import <GoogleMobileAds/GADBannerView.h>
+#import <GoogleMobileAds/GADInterstitial.h>
 #import "API.h"
 #import "AFNetworking.h"
 

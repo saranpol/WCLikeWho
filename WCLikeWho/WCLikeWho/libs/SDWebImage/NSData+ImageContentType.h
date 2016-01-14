@@ -14,6 +14,6 @@
  *
  *  @return the content type as string (i.e. image/jpeg, image/gif)
  */
-+ (NSString *)contentTypeForImageData:(NSData *)data;
++ (NSString *)sd_contentTypeForImageData:(NSData *)data;
 
 @end

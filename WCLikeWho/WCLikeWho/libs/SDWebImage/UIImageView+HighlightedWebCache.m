@@ -7,9 +7,9 @@
  */
 
 #import "UIImageView+HighlightedWebCache.h"
-#import "objc/runtime.h"
+#import "UIView+WebCacheOperation.h"
 
-static char operationKey;
+#define UIImageViewHighlightedWebCacheOperationKey @"highlightedImage"
 
 @implementation UIImageView (HighlightedWebCache)
 
@@ -30,7 +30,7 @@ static char operationKey;
 }
 
 - (void)sd_setHighlightedImageWithURL:(NSURL *)url options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock {
-    [self cancelCurrentImageLoad];
+    [self sd_cancelCurrentHighlightedImageLoad];
 
     if (url) {
         __weak UIImageView      *wself    = self;
@@ -48,7 +48,7 @@ static char operationKey;
                                          }
                                      });
         }];
-        objc_setAssociatedObject(self, &operationKey, operation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self sd_setImageLoadOperation:operation forKey:UIImageViewHighlightedWebCacheOperationKey];
     } else {
         dispatch_main_async_safe(^{
             NSError *error = [NSError errorWithDomain:@"SDWebImageErrorDomain" code:-1 userInfo:@{NSLocalizedDescriptionKey : @"Trying to load a nil url"}];
@@ -59,41 +59,8 @@ static char operationKey;
     }
 }
 
-@end
-
-
-@implementation UIImageView (HighlightedWebCacheDeprecated)
-
-- (void)setHighlightedImageWithURL:(NSURL *)url {
-    [self sd_setHighlightedImageWithURL:url options:0 progress:nil completed:nil];
-}
-
-- (void)setHighlightedImageWithURL:(NSURL *)url options:(SDWebImageOptions)options {
-    [self sd_setHighlightedImageWithURL:url options:options progress:nil completed:nil];
-}
-
-- (void)setHighlightedImageWithURL:(NSURL *)url completed:(SDWebImageCompletedBlock)completedBlock {
-    [self sd_setHighlightedImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (completedBlock) {
-            completedBlock(image, error, cacheType);
-        }
-    }];
-}
-
-- (void)setHighlightedImageWithURL:(NSURL *)url options:(SDWebImageOptions)options completed:(SDWebImageCompletedBlock)completedBlock {
-    [self sd_setHighlightedImageWithURL:url options:options progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (completedBlock) {
-            completedBlock(image, error, cacheType);
-        }
-    }];
-}
-
-- (void)setHighlightedImageWithURL:(NSURL *)url options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletedBlock)completedBlock {
-    [self sd_setHighlightedImageWithURL:url options:0 progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (completedBlock) {
-            completedBlock(image, error, cacheType);
-        }
-    }];
+- (void)sd_cancelCurrentHighlightedImageLoad {
+    [self sd_cancelImageLoadOperationWithKey:UIImageViewHighlightedWebCacheOperationKey];
 }
 
 @end

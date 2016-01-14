@@ -8,8 +8,8 @@
 
 #import "WCViewController.h"
 #import "WCAppDelegate.h"
-#import "GADBannerView.h"
-#import "GADRequest.h"
+#import <GoogleMobileAds/GADBannerView.h>
+#import <GoogleMobileAds/GADInterstitial.h>
 #import "API.h"
 
 @interface WCViewController ()
@@ -54,14 +54,13 @@
     self.mAdBanner.rootViewController = self;
     [mViewAdParent addSubview:self.mAdBanner];
     GADRequest *request = [GADRequest request];
+    request.testDevices = @[ kGADSimulatorID ];
     [self.mAdBanner loadRequest:request];
     
-    
-    
+
     [mLabelGender setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
     [mLabelYourPhoto setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
-    
-    
+
     [mButtonDone setEnabled:NO];
     
 	// Do any additional setup after loading the view, typically from a nib.

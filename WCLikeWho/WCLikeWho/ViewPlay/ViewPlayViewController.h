@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ZCSlotMachine.h"
-#import "GADBannerViewDelegate.h"
+#import <GoogleMobileAds/GADBannerView.h>
+#import <GoogleMobileAds/GADInterstitial.h>
 
 @class GADBannerView;
 @class GADRequest;
 
-@interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate, GADBannerViewDelegate> {
+@interface ViewPlayViewController : UIViewController <ZCSlotMachineDataSource, ZCSlotMachineDelegate, GADBannerViewDelegate, GADInterstitialDelegate> {
 @public
     BOOL mIsiPad;
     BOOL mIsInit;

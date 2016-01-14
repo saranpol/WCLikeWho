@@ -107,8 +107,6 @@ static API *instance;
                 failure(operation, error);
         }];
     }
-    
-    
 }
 
 
