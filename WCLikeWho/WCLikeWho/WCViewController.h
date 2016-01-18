@@ -13,7 +13,7 @@
 @class GADBannerView;
 @class GADRequest;
 
-@interface WCViewController : UIViewController <GADBannerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface WCViewController : UIViewController <GADBannerViewDelegate, GADInterstitialDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 @public
     
 }
@@ -23,6 +23,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *mViewAdParent;
 @property (nonatomic, strong) GADBannerView *mAdBanner;
+@property (nonatomic, strong) GADInterstitial *mInterstitial;
 
 
 // new

@@ -153,6 +153,8 @@
 		9A827ED41C47944100CECB7A /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A827EC21C47944100CECB7A /* UIImageView+HighlightedWebCache.m */; };
 		9A827ED51C47944100CECB7A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A827EC41C47944100CECB7A /* UIImageView+WebCache.m */; };
 		9A827ED61C47944100CECB7A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A827EC61C47944100CECB7A /* UIView+WebCacheOperation.m */; };
+		9A827EDA1C47B01E00CECB7A /* ViewMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A827ED91C47B01E00CECB7A /* ViewMore.m */; };
+		9A827EE21C47B05800CECB7A /* CellMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A827EE11C47B05800CECB7A /* CellMore.m */; };
 		9AACADEC1BC515F30076682D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AACADDA1BC515F30076682D /* AFHTTPRequestOperation.m */; };
 		9AACADED1BC515F30076682D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AACADDC1BC515F30076682D /* AFHTTPRequestOperationManager.m */; };
 		9AACADEE1BC515F30076682D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AACADDE1BC515F30076682D /* AFHTTPSessionManager.m */; };
@@ -357,6 +359,10 @@
 		9A827EC41C47944100CECB7A /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		9A827EC51C47944100CECB7A /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		9A827EC61C47944100CECB7A /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		9A827ED81C47B01E00CECB7A /* ViewMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewMore.h; sourceTree = "<group>"; };
+		9A827ED91C47B01E00CECB7A /* ViewMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewMore.m; sourceTree = "<group>"; };
+		9A827EE01C47B05800CECB7A /* CellMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMore.h; sourceTree = "<group>"; };
+		9A827EE11C47B05800CECB7A /* CellMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMore.m; sourceTree = "<group>"; };
 		9AACADD91BC515F30076682D /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		9AACADDA1BC515F30076682D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		9AACADDB1BC515F30076682D /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -741,6 +747,8 @@
 				43B335731950BD5F000E7442 /* Main_iPhone.storyboard */,
 				43B335761950BD5F000E7442 /* Main_iPad.storyboard */,
 				43B3359C1950C1EA000E7442 /* ViewShare */,
+				9A827ED71C47B01E00CECB7A /* ViewMore */,
+				9A827EDF1C47B05800CECB7A /* CellMore */,
 				033E18C31951998500FEDA8D /* ViewPlay */,
 				033E18CE1951B6CF00FEDA8D /* API */,
 				43B335701950BD5F000E7442 /* WCAppDelegate.h */,
@@ -855,6 +863,24 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		9A827ED71C47B01E00CECB7A /* ViewMore */ = {
+			isa = PBXGroup;
+			children = (
+				9A827ED81C47B01E00CECB7A /* ViewMore.h */,
+				9A827ED91C47B01E00CECB7A /* ViewMore.m */,
+			);
+			path = ViewMore;
+			sourceTree = "<group>";
+		};
+		9A827EDF1C47B05800CECB7A /* CellMore */ = {
+			isa = PBXGroup;
+			children = (
+				9A827EE01C47B05800CECB7A /* CellMore.h */,
+				9A827EE11C47B05800CECB7A /* CellMore.m */,
+			);
+			path = CellMore;
+			sourceTree = "<group>";
+		};
 		9AACADD81BC515F30076682D /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -926,7 +952,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = WC;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = hlpth;
 				TargetAttributes = {
 					43B3355D1950BD5F000E7442 = {
@@ -1097,6 +1123,7 @@
 				43B3359F1950C201000E7442 /* ViewShare.m in Sources */,
 				9AACADF11BC515F30076682D /* AFURLConnectionOperation.m in Sources */,
 				9A827ECE1C47944100CECB7A /* SDWebImageManager.m in Sources */,
+				9A827EE21C47B05800CECB7A /* CellMore.m in Sources */,
 				9A827ECB1C47944100CECB7A /* SDWebImageDecoder.m in Sources */,
 				033E18CD19519A8800FEDA8D /* ZCSlotMachine.m in Sources */,
 				43B3357B1950BD5F000E7442 /* WCViewController.m in Sources */,
@@ -1106,6 +1133,7 @@
 				9AACADF41BC515F30076682D /* AFURLSessionManager.m in Sources */,
 				18F498B01957072C0006F1DD /* MBProgressHUD.m in Sources */,
 				9A827ED11C47944100CECB7A /* UIImage+GIF.m in Sources */,
+				9A827EDA1C47B01E00CECB7A /* ViewMore.m in Sources */,
 				9A827ED31C47944100CECB7A /* UIImage+WebP.m in Sources */,
 				9A827EC81C47944100CECB7A /* NSData+ImageContentType.m in Sources */,
 				9A827ECA1C47944100CECB7A /* SDWebImageCompat.m in Sources */,
@@ -1199,6 +1227,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1274,13 +1303,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hlpth.wclikewho;
 				PRODUCT_NAME = "Look Like Animal";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "852be6a6-2048-4114-8c52-228141a51149";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1290,8 +1320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hua Lampong Co., Ltd. (Q389YSECGK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hua Lampong Co., Ltd. (Q389YSECGK)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1301,13 +1331,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWho/WCLikeWho-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WCLikeWho/libs/GoogleMobileAdsSdkiOS-6.9.2",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hlpth.wclikewho;
 				PRODUCT_NAME = "Look Like Animal";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "852be6a6-2048-4114-8c52-228141a51149";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1328,6 +1359,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "WCLikeWhoTests/WCLikeWhoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hlpth.test.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1346,6 +1378,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WCLikeWho/WCLikeWho-Prefix.pch";
 				INFOPLIST_FILE = "WCLikeWhoTests/WCLikeWhoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hlpth.test.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

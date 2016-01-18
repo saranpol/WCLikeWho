@@ -12,7 +12,7 @@
 #define kGotStar @"kGotStar"
 
 #define kSampleAdUnitID @"ca-app-pub-6262014690363579/4900978847"
-
+#define kSampleAdUnitIDInterstitial @"ca-app-pub-6262014690363579/4924170040"
 
 // Social
 #define FB_APP_ID @"909180682428928"

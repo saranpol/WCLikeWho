@@ -18,6 +18,7 @@
 
 @implementation WCViewController
 @synthesize mAdBanner;
+@synthesize mInterstitial;
 @synthesize mViewAdParent;
 @synthesize mLabelGender;
 @synthesize mButtonDone;
@@ -37,10 +38,19 @@
     [super viewDidLoad];
 
     
+
+    [self setupAdBanner];
+    [self setupAdInterstitial];
+    
+
+    [mLabelGender setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
+    [mLabelYourPhoto setFont:[UIFont fontWithName:FONT_1 size:mLabelYourPhoto.font.pointSize]];
+
+    [mButtonDone setEnabled:NO];
+}
+
+- (void)setupAdBanner {
     CGPoint origin = CGPointMake(0.0f, 0.0f);
-    
-    // Use predefined GADAdSize constants to define the GADBannerView.
-    
     GADAdSize adSize = kGADAdSizeBanner;
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
         adSize = kGADAdSizeLeaderboard;
@@ -56,14 +66,43 @@
     GADRequest *request = [GADRequest request];
     request.testDevices = @[ kGADSimulatorID ];
     [self.mAdBanner loadRequest:request];
-    
+}
 
-    [mLabelGender setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
-    [mLabelYourPhoto setFont:[UIFont fontWithName:FONT_1 size:mLabelGender.font.pointSize]];
-
-    [mButtonDone setEnabled:NO];
+- (void)setupAdInterstitial {
+    NSUserDefaults *u = [NSUserDefaults standardUserDefaults];
+    NSDate *lastTimeShowAds = [u valueForKey:@"lastTimeShowAds"];
+    if (lastTimeShowAds) {
+        NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:lastTimeShowAds];
+        if(diff < 180){
+            return;
+        }
+    }
     
-	// Do any additional setup after loading the view, typically from a nib.
+    [self createAndLoadInterstitial];
+}
+
+- (void)createAndLoadInterstitial{
+    mInterstitial = [[GADInterstitial alloc] initWithAdUnitID:kSampleAdUnitIDInterstitial];
+    GADRequest *request = [GADRequest request];
+    mInterstitial.delegate = self;
+#if TARGET_IPHONE_SIMULATOR
+    request.testDevices = @[ kGADSimulatorID ];
+#endif
+    [mInterstitial loadRequest:request];
+}
+
+- (void)setAdTime{
+    NSUserDefaults *u = [NSUserDefaults standardUserDefaults];
+    NSDate *lastTimeShowAds = [NSDate date];
+    [u setValue:lastTimeShowAds forKey:@"lastTimeShowAds"];
+    [u synchronize];
+}
+
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+    if ([mInterstitial isReady]) {
+        [mInterstitial presentFromRootViewController:self];
+        [self setAdTime];
+    }
 }
 
 - (void)didReceiveMemoryWarning
